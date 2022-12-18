@@ -1,0 +1,13 @@
+{
+  "locale": "kz",
+  "header": {
+    "welcome": "Қош Келдіңіз",
+    "about": "Біз Туралы",
+    "timeline": "Таймлайн",
+    "schedule": "Расписание",
+    "sponsors": "Спонсорлар",
+    "team": "Топ",
+    "fAQ": "Сұрақ-Жауап",
+    "registration": "Тіркелеу"
+  }
+}

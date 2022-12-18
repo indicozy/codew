@@ -1,0 +1,13 @@
+{
+  "locale": "ru",
+  "header": {
+    "welcome": "Добро!",
+    "about": "О Нас",
+    "timeline": "Таймлайн",
+    "schedule": "Расписание",
+    "sponsors": "Спонсоры",
+    "team": "Команда",
+    "fAQ": "Вопрос-Ответ",
+    "registration": "Регистрация"
+  }
+}

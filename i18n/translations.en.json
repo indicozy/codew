@@ -1,0 +1,13 @@
+{
+  "locale": "en",
+  "header": {
+    "welcome": "Welcome",
+    "about": "About",
+    "timeline": "TimeLine",
+    "schedule": "Schedule",
+    "sponsors": "Sponsors",
+    "team": "Team",
+    "fAQ": "FAQ",
+    "registration": "Registration"
+  }
+}
