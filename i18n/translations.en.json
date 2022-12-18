@@ -9,5 +9,59 @@
     "team": "Team",
     "fAQ": "FAQ",
     "registration": "Registration"
+  },
+  "hero": {
+    "register": "Register",
+    "welcome": {
+      "1": "Welcome to",
+      "2": "CodeW 2023"
+    },
+    "dates": "Dates"
+  },
+  "timeline": {
+    "headline": "CodeW 2023 Schedule",
+    "items": [
+      { "text1": "February 9 - 23rd", "text2": "Registration" },
+      { "text1": "February 23 - 28th", "text2": "Qualification Round" },
+      {
+        "text1": "March 2-3rd",
+        "text2": "Confirmation emails sent to participants"
+      }
+    ]
+  },
+  "schedule": {
+    "headline": "codeW 2023 Schedule",
+    "items": [
+      {
+        "time": "10:00-11:00",
+        "name": "Opening",
+        "description": "Get access to over 20+ pages including a dashboard layout, "
+      },
+      {
+        "time": "10:00-11:00",
+        "name": "Workshop",
+        "description": "Get access to over 20+ pages including a dashboard layout, "
+      },
+      {
+        "time": "13:00-14:00",
+        "name": "Lunch Break",
+        "description": "Get access to over 20+ pages including a dashboard layout, "
+      },
+      {
+        "time": "14:00-17:00",
+        "name": "Main Contest",
+        "description": "Get access to over 20+ pages including a dashboard layout, "
+      },
+      {
+        "time": "17:00-18:00",
+        "name": "Networking",
+        "description": "Get access to over 20+ pages including a dashboard layout, "
+      },
+      {
+        "time": "18:00-18:30",
+        "name": "Closing Ceremony",
+        "description": "Get access to over 20+ pages including a dashboard layout, "
+      }
+    ]
   }
 }

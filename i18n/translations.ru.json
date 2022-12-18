@@ -9,5 +9,13 @@
     "team": "Команда",
     "fAQ": "Вопрос-Ответ",
     "registration": "Регистрация"
+  },
+  "hero": {
+    "register": "Register",
+    "welcome": {
+      "1": "Welcome to",
+      "2": "CodeW 2023"
+    },
+    "dates": "Dates"
   }
 }

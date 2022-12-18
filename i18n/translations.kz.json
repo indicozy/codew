@@ -9,5 +9,13 @@
     "team": "Топ",
     "fAQ": "Сұрақ-Жауап",
     "registration": "Тіркелеу"
+  },
+  "hero": {
+    "register": "Register",
+    "welcome": {
+      "1": "Welcome to",
+      "2": "CodeW 2023"
+    },
+    "dates": "Dates"
   }
 }

@@ -32,11 +32,14 @@ const Links = () => {
 
 export function Header() {
   return (
-    <div className="w-full bg-blue-400 items-center ">
-      <div className="h-12 justify-between items-center flex container mx-auto">
-        <Links />
-        <LocaleSwitch />
+    <>
+      <div className="fixed z-10 items-center w-full bg-blue-400">
+        <div className="container flex justify-between items-center mx-auto h-12">
+          <Links />
+          <LocaleSwitch />
+        </div>
       </div>
-    </div>
+      <div className="h-12"></div>
+    </>
   );
 }
