@@ -22,19 +22,27 @@ export default function Home() {
       </Head>
       <Header />
       <main>
-        <ComponentAnchor href="welcome">
+        <ComponentAnchor id="welcome">
           <Hero />
         </ComponentAnchor>
-        <Description />
-        <ComponentAnchor href="timeline">
+        <ComponentAnchor id="about">
+          <Description />
+        </ComponentAnchor>
+        <ComponentAnchor id="timeline">
           <Timeline />
         </ComponentAnchor>
-        <ComponentAnchor href="schedule">
+        <ComponentAnchor id="schedule">
           <Schedule />
         </ComponentAnchor>
-        <Sponsors />
-        <Team />
-        <Faq />
+        <ComponentAnchor id="sponsors">
+          <Sponsors />
+        </ComponentAnchor>
+        <ComponentAnchor id="team">
+          <Team />
+        </ComponentAnchor>
+        <ComponentAnchor id="faq">
+          <Faq />
+        </ComponentAnchor>
         <Registration />
         <Footer />
       </main>

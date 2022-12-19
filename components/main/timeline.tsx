@@ -26,8 +26,10 @@ export function Timeline() {
   return (
     <>
       <Headline>{t("timeline.headline")}</Headline>
-      <div className="grid grid-cols-3">
-        <Timelines timelines={timelines} />
+      <div className="flex items-center h-[40rem]">
+        <div className="grid grid-cols-3 w-full">
+          <Timelines timelines={timelines} />
+        </div>
       </div>
     </>
   );

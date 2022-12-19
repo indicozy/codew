@@ -1,4 +1,5 @@
 import { useTranslation } from "next-export-i18n";
+import { Button } from "../ui/button";
 
 export function Hero() {
   const { t } = useTranslation();
@@ -19,12 +20,7 @@ export function Hero() {
         </div>
       </div>
       <div className="grid place-items-center mt-8">
-        <a
-          href="#register"
-          className="px-6 py-4 text-4xl bg-red-300 rounded-full"
-        >
-          {t("hero.register")}
-        </a>
+        <Button />
       </div>
     </div>
   );

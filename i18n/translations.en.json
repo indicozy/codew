@@ -1,5 +1,6 @@
 {
   "locale": "en",
+  "register": "Register",
   "header": {
     "welcome": "Welcome",
     "about": "About",
@@ -11,7 +12,6 @@
     "registration": "Registration"
   },
   "hero": {
-    "register": "Register",
     "welcome": {
       "1": "Welcome to",
       "2": "CodeW 2023"
@@ -19,7 +19,7 @@
     "dates": "Dates"
   },
   "timeline": {
-    "headline": "CodeW 2023 Schedule",
+    "headline": "CodeW 2023 Timeline",
     "items": [
       { "text1": "February 9 - 23rd", "text2": "Registration" },
       { "text1": "February 23 - 28th", "text2": "Qualification Round" },
@@ -62,6 +62,25 @@
         "name": "Closing Ceremony",
         "description": "Get access to over 20+ pages including a dashboard layout, "
       }
+    ]
+  },
+  "sponsors": {
+    "headline": "Our Sponsors"
+  },
+  "team": {
+    "headline": "Our Team",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+  },
+  "about": {
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+  },
+  "faq": {
+    "headline": "FAQ",
+    "questions": [
+      { "q": "qnweoadsnosd", "a": "qemasd" },
+      { "q": "qnweoadsnosd", "a": "qemasd" },
+      { "q": "qnweoadsnosd", "a": "qemasd" },
+      { "q": "qnweoadsnosd", "a": "qemasd" }
     ]
   }
 }

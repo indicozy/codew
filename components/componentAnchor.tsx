@@ -1,11 +1,11 @@
 import { FC, ReactNode } from "react";
 
-export const ComponentAnchor: FC<{ children: ReactNode; href: string }> = ({
+export const ComponentAnchor: FC<{ children: ReactNode; id: string }> = ({
   children,
-  href,
+  id,
 }) => {
   return (
-    <section id={href} className="min-h-screen scroll-mt-12">
+    <section id={id} className="min-h-screen scroll-mt-12">
       {children}
     </section>
   );

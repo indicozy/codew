@@ -17,7 +17,7 @@ export function Schedule() {
                 {schedule.time}
               </div>
               <div className="relative mr-8 ml-8 border-l-4 border-gray-800">
-                <span className="flex absolute -left-6 justify-center items-center w-12 h-12 bg-blue-200 rounded-full border-4 border-gray-800">
+                <span className="flex absolute -left-[1.625rem] justify-center items-center w-12 h-12 bg-blue-200 rounded-full border-4 border-gray-800">
                   <IconCalendar />
                 </span>
               </div>
