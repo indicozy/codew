@@ -1,7 +1,9 @@
+import { IconMenu } from "@tabler/icons";
 import { useLanguageQuery, useTranslation } from "next-export-i18n";
 import Link from "next/link";
 import { LocaleSwitch } from "../locale-switch";
-const links = [
+import Navbar from "../navbar/navbar";
+export const links = [
   "welcome",
   "about",
   "timeline",
@@ -33,9 +35,14 @@ const Links = () => {
 export function Header() {
   return (
     <>
-      <div className="fixed z-10 items-center w-full bg-blue-400">
+      <div className="block sm:hidden">
+        <Navbar />
+      </div>
+      <div className="fixed z-10 items-center w-full bg-bg bg-opacity-30 backdrop-blur-md">
         <div className="container flex justify-between items-center mx-auto h-12">
-          <Links />
+          <div className="hidden sm:block">
+            <Links />
+          </div>
           <LocaleSwitch />
         </div>
       </div>
