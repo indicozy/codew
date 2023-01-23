@@ -21,7 +21,7 @@
   "timeline": {
     "headline": "CodeW 2023 Timeline",
     "items": [
-      { "text1": "February 9 - 23rd", "text2": "Registration" },
+      { "text1": "February 9 - 23rd", "text2": "Registration", "image": "/" },
       { "text1": "February 23 - 28th", "text2": "Qualification Round" },
       {
         "text1": "March 2-3rd",
@@ -77,13 +77,34 @@
   "faq": {
     "headline": "FAQ",
     "questions": [
-      { "q": "Who can participate?", "a": "High school students (grades 9-12), university foundation students, undergraduate, and graduate students residing in Kazakhstan (not necessarily with Kazakhstani citizenship) eligible for participation." },
-      { "q": "Can I participate if I am new to programming?", "a": "Yes, we encourage everyone interested in programming to join us.  All you need to know is the basics of at least one Object-oriented programming language. There will be three tracks depending on your level: novice, intermediate, experienced (see details above). Your level will be determined according to the results of qualifier test on HackerRank." },
-      { "q": "What is the format of codeW 2023?", "a": " This year codeW will be held in hybrid mode, with participants who choose the online format not being eligible for prizes. The online participants will only receive certificates of participation." },
-      { "q": "Where will codeW be held?", "a": "codeW 2023 will be conducted at the Nazarbayev University campus, Astana, Kazakhstan." },
-      { "q": "Do I have to know English?", "a": "No, you don’t have to. codeW will be held in three different languages: English, Kazakh, and Russian. All tasks and materials from workshops will be translated into Kazakh and Russian languages." }, 
-      { "q": "How do I know which track is suitable for me?", "a": "If you got selected, you will receive a link to the preliminary challenge that will identify your level and we will match you to a suitable track." },
-      { "q": "What programming languages are accepted in the contest?", "a": "The contest will be held using Hackerrank, and the accepted programming languages include Java, Python, and C++." },
+      {
+        "q": "Who can participate?",
+        "a": "High school students (grades 9-12), university foundation students, undergraduate, and graduate students residing in Kazakhstan (not necessarily with Kazakhstani citizenship) eligible for participation."
+      },
+      {
+        "q": "Can I participate if I am new to programming?",
+        "a": "Yes, we encourage everyone interested in programming to join us.  All you need to know is the basics of at least one Object-oriented programming language. There will be three tracks depending on your level: novice, intermediate, experienced (see details above). Your level will be determined according to the results of qualifier test on HackerRank."
+      },
+      {
+        "q": "What is the format of codeW 2023?",
+        "a": " This year codeW will be held in hybrid mode, with participants who choose the online format not being eligible for prizes. The online participants will only receive certificates of participation."
+      },
+      {
+        "q": "Where will codeW be held?",
+        "a": "codeW 2023 will be conducted at the Nazarbayev University campus, Astana, Kazakhstan."
+      },
+      {
+        "q": "Do I have to know English?",
+        "a": "No, you don’t have to. codeW will be held in three different languages: English, Kazakh, and Russian. All tasks and materials from workshops will be translated into Kazakh and Russian languages."
+      },
+      {
+        "q": "How do I know which track is suitable for me?",
+        "a": "If you got selected, you will receive a link to the preliminary challenge that will identify your level and we will match you to a suitable track."
+      },
+      {
+        "q": "What programming languages are accepted in the contest?",
+        "a": "The contest will be held using Hackerrank, and the accepted programming languages include Java, Python, and C++."
+      },
       { "q": "Is it free?", "a": "Yes, it is absolutely free." }
     ]
   }

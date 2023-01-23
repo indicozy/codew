@@ -3,7 +3,6 @@ import { ComponentAnchor } from "../components/componentAnchor";
 import { Description } from "../components/main/description";
 import { Faq } from "../components/main/faq";
 import { Footer } from "../components/main/footer";
-import { Header } from "../components/main/header";
 import { Hero } from "../components/main/hero";
 import { Registration } from "../components/main/registration";
 import { Schedule } from "../components/main/schedule";
@@ -20,16 +19,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
       <ComponentAnchor id="welcome">
         <Hero />
       </ComponentAnchor>
-      <ComponentAnchor id="about">
-        <Description />
-      </ComponentAnchor>
-      <ComponentAnchor id="timeline">
-        <Timeline />
-      </ComponentAnchor>
+      <Description />
+      <Timeline />
       <ComponentAnchor id="schedule">
         <Schedule />
       </ComponentAnchor>

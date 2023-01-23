@@ -1,23 +1,22 @@
 import { useTranslation } from "next-export-i18n";
+import { ComponentAnchor } from "../componentAnchor";
 import { Button } from "../ui/button";
+import Container from "../ui/container";
 
 export function Description() {
   const { t } = useTranslation();
   return (
-    <div className="min-h-[calc(100vh-3rem)]">
-      <div className="grid grid-cols-1 w-screen sm:grid-cols-2">
-        <div className="grid place-items-center">
-          <div className="ml-12 max-w-screen-md text-xl">
+    <ComponentAnchor id="about">
+      <Container>
+        <div className="grid grid-cols-1 sm:grid-cols-2">
+          <div className="max-w-screen-md text-xl">
             {t("about.description")}
           </div>
+          <div className="w-full">
+            <div className="mx-auto w-[30rem] h-[30rem] bg-green-400"></div>
+          </div>
         </div>
-        <div className="grid place-items-center">
-          <div className="mx-auto w-[40rem] h-[40rem] bg-green-400"></div>
-        </div>
-      </div>
-      <div className="grid place-items-center mt-8">
-        <Button />
-      </div>
-    </div>
+      </Container>
+    </ComponentAnchor>
   );
 }
