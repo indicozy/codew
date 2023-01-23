@@ -9,25 +9,16 @@ export function Schedule() {
   return (
     <>
       <Headline>{t("schedule.headline")}</Headline>
-      <ol className="mx-auto w-[28rem] z-0">
+      <ol className="mx-auto w-[28rem] z-0 -space-y-1">
         {schedules.map((schedule, i) => (
-          <li className="" key={i}>
-            <div className="flex flex-nowrap">
-              <div className="flex justify-end items-center h-12 text-2xl text-right">
-                {schedule.time}
+          <li className="my-0" key={i}>
+            <div className="flex flex-nowrap relative mr-8 ml-8 ">
+              <div className="flex items-center">
+                <div className="text-2xl text-right">{schedule.time}</div>
               </div>
-              <div className="relative mr-8 ml-8 border-l-4 border-gray-800">
-                <span className="flex absolute -left-[1.625rem] justify-center items-center w-12 h-12 bg-blue-200 rounded-full border-4 border-gray-800">
-                  <IconCalendar />
-                </span>
-              </div>
-              <div>
-                <h3 className="flex items-center mt-1 text-2xl font-semibold text-gray-900">
-                  {schedule.name}
-                </h3>
-                <p className="mb-20 text-base font-normal text-gray-500">
-                  {schedule.description}
-                </p>
+              <span className="absolute mx-0 my-auto top-0 bottom-0 left-[10.5rem] justify-center items-center w-6 h-6 bg-default rounded-full"></span>
+              <div className="flex items-center ml-8 border-l-2 pl-8 h-40">
+                <h3 className="text-xl">{schedule.name}</h3>
               </div>
             </div>
           </li>

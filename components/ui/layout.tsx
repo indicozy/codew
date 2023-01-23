@@ -8,7 +8,7 @@ const montserrat = Montserrat({
   weight: ["400", "500", "700"],
   subsets: ["latin-ext", "cyrillic-ext"],
 });
-const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "700"] });
+
 const neue = localFont({
   variable: "--font-neue",
   src: [
@@ -35,13 +35,7 @@ const Layout: FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <>
       <Header />
-      <main
-        className={`${
-          t("locale") === "en"
-            ? poppins.className
-            : montserrat.className + " font-medium"
-        } ${neue.variable}`}
-      >
+      <main className={`${montserrat.className} font-medium ${neue.variable}`}>
         {children}
       </main>
     </>

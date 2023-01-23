@@ -34,33 +34,27 @@
     "items": [
       {
         "time": "10:00-11:00",
-        "name": "Opening",
-        "description": "Get access to over 20+ pages including a dashboard layout, "
+        "name": "Opening"
       },
       {
         "time": "10:00-11:00",
-        "name": "Workshop",
-        "description": "Get access to over 20+ pages including a dashboard layout, "
+        "name": "Workshop"
       },
       {
         "time": "13:00-14:00",
-        "name": "Lunch Break",
-        "description": "Get access to over 20+ pages including a dashboard layout, "
+        "name": "Lunch Break"
       },
       {
         "time": "14:00-17:00",
-        "name": "Main Contest",
-        "description": "Get access to over 20+ pages including a dashboard layout, "
+        "name": "Main Contest"
       },
       {
         "time": "17:00-18:00",
-        "name": "Networking",
-        "description": "Get access to over 20+ pages including a dashboard layout, "
+        "name": "Networking"
       },
       {
         "time": "18:00-18:30",
-        "name": "Closing Ceremony",
-        "description": "Get access to over 20+ pages including a dashboard layout, "
+        "name": "Closing Ceremony"
       }
     ]
   },
