@@ -43,6 +43,7 @@ export function Header() {
           <div className="hidden sm:block">
             <Links />
           </div>
+          <div className="block sm:hidden"></div>
           <LocaleSwitch />
         </div>
       </div>

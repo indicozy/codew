@@ -9,14 +9,12 @@ const variants = {
   open: {
     y: 0,
     opacity: 1,
-    display: "block",
     transition: {
       y: { stiffness: 1000, velocity: -100 },
     },
   },
   closed: {
     y: 50,
-    display: "none",
     opacity: 0,
     transition: {
       y: { stiffness: 1000 },
@@ -44,10 +42,19 @@ const MenuItem: FC<{ toggle: Cycle; link: string }> = ({ link, toggle }) => {
 
 const variantsNavigation = {
   open: {
-    transition: { staggerChildren: 0.07, delayChildren: 0.2 },
+    display: "block",
+    transition: {
+      staggerChildren: 0.07,
+      delayChildren: 0.2,
+    },
   },
   closed: {
-    transition: { staggerChildren: 0.05, staggerDirection: -1 },
+    display: "none",
+    transition: {
+      staggerChildren: 0.05,
+      staggerDirection: -1,
+      when: "afterChildren",
+    },
   },
 };
 

@@ -2,6 +2,7 @@ import { useTranslation } from "next-export-i18n";
 import Image from "next/image";
 import { FC } from "react";
 import { ComponentAnchor } from "../componentAnchor";
+import BackgroundImage from "../ui/backgroundImage";
 import Container from "../ui/container";
 import { Headline } from "../ui/headline";
 
@@ -43,13 +44,16 @@ export function Timeline() {
   const { t } = useTranslation();
   const timelines: TypeTimelines[] = t("timeline.items");
   return (
-    <ComponentAnchor id="timeline">
-      <Container>
-        <Headline>{t("timeline.headline")}</Headline>
-        <div className="grid grid-cols-1 sm:grid-cols-3 w-full sm:mt-20">
-          <Timelines timelines={timelines} />
-        </div>
-      </Container>
-    </ComponentAnchor>
+    <>
+      <BackgroundImage image={"/assets/110.png"} position="right" />
+      <ComponentAnchor id="timeline">
+        <Container>
+          <Headline>{t("timeline.headline")}</Headline>
+          <div className="grid grid-cols-1 sm:grid-cols-3 w-full sm:mt-20">
+            <Timelines timelines={timelines} />
+          </div>
+        </Container>
+      </ComponentAnchor>
+    </>
   );
 }
