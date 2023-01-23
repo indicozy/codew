@@ -21,31 +21,29 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main>
-        <ComponentAnchor id="welcome">
-          <Hero />
-        </ComponentAnchor>
-        <ComponentAnchor id="about">
-          <Description />
-        </ComponentAnchor>
-        <ComponentAnchor id="timeline">
-          <Timeline />
-        </ComponentAnchor>
-        <ComponentAnchor id="schedule">
-          <Schedule />
-        </ComponentAnchor>
-        <ComponentAnchor id="sponsors">
-          <Sponsors />
-        </ComponentAnchor>
-        <ComponentAnchor id="team">
-          <Team />
-        </ComponentAnchor>
-        <ComponentAnchor id="faq">
-          <Faq />
-        </ComponentAnchor>
-        <Registration />
-        <Footer />
-      </main>
+      <ComponentAnchor id="welcome">
+        <Hero />
+      </ComponentAnchor>
+      <ComponentAnchor id="about">
+        <Description />
+      </ComponentAnchor>
+      <ComponentAnchor id="timeline">
+        <Timeline />
+      </ComponentAnchor>
+      <ComponentAnchor id="schedule">
+        <Schedule />
+      </ComponentAnchor>
+      <ComponentAnchor id="sponsors">
+        <Sponsors />
+      </ComponentAnchor>
+      <ComponentAnchor id="team">
+        <Team />
+      </ComponentAnchor>
+      <ComponentAnchor id="faq">
+        <Faq />
+      </ComponentAnchor>
+      <Registration />
+      <Footer />
     </>
   );
 }

@@ -11,7 +11,7 @@ export function Hero() {
         </div>
         <div className="grid place-items-center text-center bg-blue-300">
           <div>
-            <h1 className="text-6xl">
+            <h1 className="text-6xl font-neue font-bold">
               {t("hero.welcome.1")} <br />
               {t("hero.welcome.2")}
             </h1>
