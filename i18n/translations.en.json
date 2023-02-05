@@ -59,7 +59,11 @@
     ]
   },
   "sponsors": {
-    "headline": "Our Sponsors"
+    "headline": "Our Sponsors",
+    "umag": "Description of umag",
+    "epam": "Description of epam",
+    "tassay": "Description of epam",
+    "zapis": "Description of epam"
   },
   "team": {
     "headline": "Our Team",

@@ -1,4 +1,5 @@
 import { useTranslation } from "next-export-i18n";
+import Image from "next/image";
 import { ComponentAnchor } from "../componentAnchor";
 import { Button } from "../ui/button";
 import Container from "../ui/container";
@@ -13,7 +14,13 @@ export function Description() {
             {t("about.description")}
           </div>
           <div className="w-full sm:order-2 order-1">
-            <div className="mx-auto w-[30rem] h-[30rem] bg-green-400"></div>
+            <Image
+              className="p-8 w-full sm:w-[40rem]"
+              src={"/assets/logo.svg"}
+              width="1000"
+              height={1000}
+              alt="CodeW logo"
+            />
           </div>
         </div>
       </Container>

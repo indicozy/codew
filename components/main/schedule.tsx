@@ -21,7 +21,7 @@ export function Schedule() {
               <div className="flex items-center">
                 <div className="text-2xl text-right w-30">{schedule.time}</div>
               </div>
-              <span className="absolute mx-0 my-auto top-0 bottom-0 left-[10.5rem] justify-center items-center w-6 h-6 bg-default rounded-full"></span>
+              <span className="absolute mx-0 my-auto top-0 bottom-0 left-[9.375rem] justify-center items-center w-6 h-6 bg-default rounded-full"></span>
               <div className="flex items-center ml-8 border-l-2 pl-8 h-40">
                 <h3 className="text-xl">{schedule.name}</h3>
               </div>

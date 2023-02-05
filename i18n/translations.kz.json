@@ -59,7 +59,11 @@
     ]
   },
   "sponsors": {
-    "headline": "Біздің демеушілер"
+    "headline": "Біздің демеушілер",
+    "umag": "Description of umag",
+    "epam": "Description of epam",
+    "tassay": "Description of epam",
+    "zapis": "Description of epam"
   },
   "team": {
     "headline": "Біздің тобымыз",

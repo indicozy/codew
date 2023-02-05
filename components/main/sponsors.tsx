@@ -8,40 +8,52 @@ interface iSponsor {
   href: string;
   width: number;
   height: number;
+  description: string;
 }
 
 export function Sponsors() {
+  const { t } = useTranslation();
   const sponsors: iSponsor[] = [
-    {
-      href: "/sponsor/epam.png",
-      height: 300,
-      width: 300,
-    },
     {
       href: "/sponsor/umag.svg",
       height: 300,
       width: 300,
+      description: t("sponsors.umag"),
+    },
+    {
+      href: "/sponsor/epam.png",
+      height: 300,
+      width: 300,
+      description: t("sponsors.epam"),
+    },
+    {
+      href: "/sponsor/tassay.svg",
+      height: 300,
+      width: 300,
+      description: t("sponsors.zapis"),
     },
     {
       href: "/sponsor/zapis.svg",
       height: 300,
       width: 300,
+      description: t("sponsors.tassay"),
     },
   ];
-  const { t } = useTranslation();
   return (
     <ComponentAnchor id="sponsors">
       <Container>
         <Headline>{t("sponsors.headline")}</Headline>
-        <div className="grid grid-cols-2 gap-40 place-items-center mx-auto max-w-screen-lg">
+        <div className="grid grid-cols-1 sm:grid-cols-2 mt-20 gap-40 w-full sm:w-[1028px]">
           {sponsors.map((sponsor, i) => (
-            <div className="w-60 h-60" key={i}>
+            <div key={i}>
               <Image
+                className="w-40"
                 src={sponsor.href}
                 alt={""}
                 width={sponsor.width}
                 height={sponsor.height}
               />
+              <div className="text-xl">{sponsor.description}</div>
             </div>
           ))}
         </div>
