@@ -1,14 +1,23 @@
-import { useScroll, useTransform } from "framer-motion";
 import { useTranslation } from "next-export-i18n";
-import Image from "next/image";
+import { useWindowSize } from "react-use";
 import { ComponentAnchor } from "../componentAnchor";
 import BackgroundImage from "../ui/backgroundImage";
 import { Button } from "../ui/button";
 import Container from "../ui/container";
+import dynamic from "next/dynamic";
+
+const HeroDesktopDynamic = dynamic(() => import("../hero/HeroDesktop"), {
+  ssr: false,
+  loading: () => <p>...</p>,
+});
+const HeroMobileDynamic = dynamic(() => import("../hero/HeroMobile"), {
+  ssr: false,
+  loading: () => <p>...</p>,
+});
 
 export function Hero() {
   const { t } = useTranslation();
-  const { scrollY } = useScroll();
+  const { width } = useWindowSize();
   return (
     <>
       <BackgroundImage image={"/assets/56.png"} position="right" />
@@ -16,7 +25,7 @@ export function Hero() {
         <Container>
           <div className="grid grid-cols-1 sm:grid-cols-2">
             <div className="grid place-items-center">
-              <div className="mx-auto w-[20rem] h-[20rem] bg-green-400"></div>
+              {width > 767 ? <HeroDesktopDynamic /> : <HeroMobileDynamic />}
             </div>
             <div className="flex justify-center text-center">
               <div>
