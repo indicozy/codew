@@ -43,7 +43,7 @@ export function Sponsors() {
     <ComponentAnchor id="sponsors">
       <Container>
         <Headline>{t("sponsors.headline")}</Headline>
-        <div className="grid grid-cols-1 sm:grid-cols-2 mt-20 gap-40 w-full sm:w-[1028px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 mt-20 gap-40 w-full sm:w-[1028px] mx-auto">
           {sponsors.map((sponsor, i) => (
             <div key={i}>
               <Image

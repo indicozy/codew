@@ -22,18 +22,10 @@ export default function Home() {
       <Hero />
       <Description />
       <Timeline />
-      <ComponentAnchor id="schedule">
-        <Schedule />
-      </ComponentAnchor>
-      <ComponentAnchor id="sponsors">
-        <Sponsors />
-      </ComponentAnchor>
-      <ComponentAnchor id="team">
-        <Team />
-      </ComponentAnchor>
-      <ComponentAnchor id="faq">
-        <Faq />
-      </ComponentAnchor>
+      <Schedule />
+      <Sponsors />
+      <Team />
+      <Faq />
       <Registration />
       <Footer />
     </>

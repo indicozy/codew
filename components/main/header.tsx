@@ -10,7 +10,7 @@ export const links = [
   "schedule",
   "sponsors",
   "team",
-  "fAQ",
+  "faq",
   "registration",
 ];
 const Element = ({ link }: { link: string }) => {

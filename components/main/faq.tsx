@@ -1,5 +1,6 @@
 import { useTranslation } from "next-export-i18n";
 import { FC } from "react";
+import { ComponentAnchor } from "../componentAnchor";
 import { Headline } from "../ui/headline";
 
 type TypeQuestion = { q: string; a: string };
@@ -14,13 +15,13 @@ export function Faq() {
     </div>
   );
   return (
-    <>
+    <ComponentAnchor id="faq">
       <Headline>{t("faq.headline")}</Headline>
       <div className="grid grid-cols-2 gap-4 place-items-center">
         {questions.map((question: TypeQuestion, i: number) => (
           <Question key={i} question={question} />
         ))}
       </div>
-    </>
+    </ComponentAnchor>
   );
 }

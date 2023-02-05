@@ -8,6 +8,7 @@ import {
 } from "@tabler/icons";
 import Link from "next/link";
 import { FC } from "react";
+import { ComponentAnchor } from "../componentAnchor";
 
 type Badge = { icon: TablerIcon; name: string; href: string };
 
@@ -27,7 +28,7 @@ export function Team() {
   );
   const { t } = useTranslation();
   return (
-    <>
+    <ComponentAnchor id="team">
       <Headline>{t("team.headline")}</Headline>
       <div className="grid grid-cols-2">
         <div className="grid place-items-center">
@@ -44,6 +45,6 @@ export function Team() {
           <div className="mx-auto w-[40rem] h-[40rem] bg-green-400"></div>
         </div>
       </div>
-    </>
+    </ComponentAnchor>
   );
 }
