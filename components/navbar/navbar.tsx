@@ -32,7 +32,7 @@ const MenuItem: FC<{ toggle: Cycle; link: string }> = ({ link, toggle }) => {
       whileTap={{ scale: 0.95 }}
     >
       <Link className="" href={`#${link}`} onClick={() => toggle()}>
-        <div className="rounded-[5px] w-screen flex-1 text-white text-xl font-medium font-neue">
+        <div className="rounded-[5px] w-screen flex-1 text-white text-xl font-medium font-mont">
           {t(`header.${link}`)}
         </div>
       </Link>

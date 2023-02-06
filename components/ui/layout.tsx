@@ -6,7 +6,7 @@ import { Header } from "../main/header";
 
 const montserrat = Montserrat({
   weight: ["400", "500", "700"],
-  subsets: ["latin-ext", "cyrillic-ext"],
+  subsets: ["latin", "cyrillic", "latin-ext", "cyrillic-ext"],
 });
 
 const neue = localFont({
