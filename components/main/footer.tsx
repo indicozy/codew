@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Socials } from "../../data/info";
 import Container from "../ui/container";
 
 export function Footer() {
@@ -46,9 +47,9 @@ export function Footer() {
           />
         </div>
         <div className="flex items-center space-x-8 mx-auto flex-nowrap justify-center mt-8 text-rose-300">
-          <Link href="#">Instagram</Link>
-          <Link href="#">Telegram</Link>
-          <Link href="#">YouTube</Link>
+          <Link href={Socials.instagram}>Instagram</Link>
+          <Link href={Socials.telegram}>Telegram</Link>
+          <Link href={Socials.youtube}>YouTube</Link>
         </div>
         <div className="text-center text-sm text-gray-600 mt-8 italic">
           © 2023 NU ACM-W SC All rights reserved.
