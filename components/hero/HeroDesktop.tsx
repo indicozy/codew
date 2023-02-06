@@ -40,8 +40,8 @@ function Box(props: any) {
 
 export default function HeroDesktop() {
   return (
-    <div className="w-full h-full">
-      <Canvas>
+    <div className="h-full w-screen sm:w-[calc(50vw)]">
+      <Canvas flat>
         {/* <ambientLight intensity={10} /> */}
         {/* <spotLight position={[100, 100, 100]} angle={0.15} penumbra={0.1} /> */}
         <pointLight position={[-2, 1, 5]} color={0x7b56e9} />
