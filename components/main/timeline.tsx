@@ -49,7 +49,7 @@ export function Timeline() {
       <ComponentAnchor id="timeline">
         <Container>
           <Headline>{t("timeline.headline")}</Headline>
-          <div className="grid grid-cols-1 sm:grid-cols-3 w-full sm:mt-20">
+          <div className="grid grid-cols-1 sm:grid-cols-3 w-full sm:mt-20 align-top justify-items-center">
             <Timelines timelines={timelines} />
           </div>
         </Container>

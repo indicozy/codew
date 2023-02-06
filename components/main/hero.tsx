@@ -21,27 +21,27 @@ export function Hero() {
   return (
     <>
       <BackgroundImage image={"/assets/56.png"} position="right" />
-      <ComponentAnchor id="welcome">
-        <Container>
-          <div className="grid grid-cols-1 sm:grid-cols-2">
-            <div className="grid place-items-center">
-              {width > 767 ? <HeroDesktopDynamic /> : <HeroMobileDynamic />}
-            </div>
-            <div className="flex justify-center text-center">
-              <div>
-                <h1 className="text-4xl sm:text-6xl font-neue font-bold">
-                  {t("hero.welcome.1")} <br />
-                  {t("hero.welcome.2")}
-                </h1>
-                <div className="text-3xl">{t("hero.dates")}</div>
-              </div>
+      <div className="h-[calc(100vh-4rem)] scroll-mt-20" id="welcome">
+        {/* <Container> */}
+        <div className="grid grid-cols-1 sm:grid-cols-2">
+          <div className="grid place-items-start sm:place-items-center h-[calc((100vh-4rem)/2)]">
+            {width > 767 ? <HeroDesktopDynamic /> : <HeroMobileDynamic />}
+          </div>
+          <div className="flex justify-center text-center ">
+            <div>
+              <h1 className="text-4xl sm:text-6xl font-neue font-bold">
+                {t("hero.welcome.1")} <br />
+                {t("hero.welcome.2")}
+              </h1>
+              <div className="text-3xl">{t("hero.dates")}</div>
             </div>
           </div>
-          <div className="grid place-items-center mt-8">
-            <Button />
-          </div>
-        </Container>
-      </ComponentAnchor>
+        </div>
+        <div className="grid place-items-center mt-8">
+          <Button />
+        </div>
+        {/* </Container> */}
+      </div>
     </>
   );
 }

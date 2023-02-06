@@ -47,9 +47,9 @@ export function Footer() {
           />
         </div>
         <div className="flex items-center space-x-8 mx-auto flex-nowrap justify-center mt-8 text-rose-300">
-          <Link href={Socials.instagram}>Instagram</Link>
-          <Link href={Socials.telegram}>Telegram</Link>
-          <Link href={Socials.youtube}>YouTube</Link>
+          <a href={Socials.instagram}>Instagram</a>
+          <a href={Socials.telegram}>Telegram</a>
+          <a href={Socials.youtube}>YouTube</a>
         </div>
         <div className="text-center text-sm text-gray-600 mt-8 italic">
           © 2023 NU ACM-W SC All rights reserved.

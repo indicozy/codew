@@ -1,5 +1,5 @@
 import { ComponentAnchor } from "../componentAnchor";
 
 export function Registration() {
-  return <ComponentAnchor id="schedule">registration</ComponentAnchor>;
+  return <ComponentAnchor id="registration">registration</ComponentAnchor>;
 }

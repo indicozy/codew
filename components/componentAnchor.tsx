@@ -7,7 +7,7 @@ export const ComponentAnchor: FC<{ children: ReactNode; id: string }> = ({
   return (
     <section
       id={id}
-      className="min-h-[calc(100vh-3rem)] scroll-mt-12 flex flex-col justify-center items-center my-24 sm:my-12"
+      className="min-h-[calc(100vh-4rem)] scroll-mt-20 flex flex-col justify-center items-center my-24 sm:my-12"
     >
       {children}
     </section>

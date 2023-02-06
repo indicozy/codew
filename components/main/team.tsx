@@ -22,12 +22,12 @@ export function Team() {
     { icon: IconBrandYoutube, name: "YouTube", href: Socials.youtube },
   ];
   const Badge: FC<{ badge: Badge }> = ({ badge }) => (
-    <Link href={badge.href}>
+    <a href={badge.href}>
       <span className="flex bg-red-300 rounded-full px-2 py-0.5 text-sm hover:bg-red-400">
         <badge.icon size={20} />
         {badge.name}
       </span>
-    </Link>
+    </a>
   );
   const { t } = useTranslation();
   return (
@@ -40,13 +40,13 @@ export function Team() {
               <div>{t("team.description")}</div>
               <div className="flex mt-4 space-x-10">
                 {badges.map((badge, i) => (
-                  <Link
+                  <a
                     href={badge.href}
                     key={i}
                     className="text-base text-rose-300"
                   >
                     {badge.name}
-                  </Link>
+                  </a>
                 ))}
               </div>
             </div>

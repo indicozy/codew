@@ -5,6 +5,7 @@ const BackgroundImage: FC<{ image: string; position: "left" | "right" }> = ({
   image,
   position,
 }) => {
+  return <></>;
   return (
     <div className="relative w-screen">
       <div className={`absolute -top-72 -${position}-72 w-[36rem] h-36rem`}>

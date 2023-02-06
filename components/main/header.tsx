@@ -15,11 +15,7 @@ export const links = [
 ];
 const Element = ({ link }: { link: string }) => {
   const { t } = useTranslation();
-  return (
-    <Link className="" href={`#${link}`}>
-      {t(`header.${link}`)}
-    </Link>
-  );
+  return <a href={`#${link}`}>{t(`header.${link}`)}</a>;
 };
 
 const Links = () => {
