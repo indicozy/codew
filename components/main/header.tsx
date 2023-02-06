@@ -24,7 +24,7 @@ const Element = ({ link }: { link: string }) => {
 
 const Links = () => {
   return (
-    <div className="flex flex-row space-x-4 text-lg">
+    <div className="flex flex-row space-x-4 text-xl font-medium">
       {links.map((e, i) => (
         <Element link={e} key={i} />
       ))}
@@ -39,7 +39,7 @@ export function Header() {
         <Navbar />
       </div>
       <div className="fixed z-10 items-center w-full bg-bg bg-opacity-30 backdrop-blur-md">
-        <div className="container flex justify-between items-center mx-auto h-12">
+        <div className="container flex justify-between items-center mx-auto h-16 px-4">
           <div className="hidden sm:block">
             <Links />
           </div>
@@ -47,7 +47,7 @@ export function Header() {
           <LocaleSwitch />
         </div>
       </div>
-      <div className="h-12"></div>
+      <div className="h-16"></div>
     </>
   );
 }

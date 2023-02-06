@@ -32,7 +32,7 @@ const MenuItem: FC<{ toggle: Cycle; link: string }> = ({ link, toggle }) => {
       whileTap={{ scale: 0.95 }}
     >
       <Link className="" href={`#${link}`} onClick={() => toggle()}>
-        <div className="rounded-[5px] w-screen  flex-1 text-black">
+        <div className="rounded-[5px] w-screen  flex-1 text-white text-xl font-medium">
           {t(`header.${link}`)}
         </div>
       </Link>
@@ -60,7 +60,7 @@ const variantsNavigation = {
 
 export const Navigation: FC<{ toggle: Cycle }> = ({ toggle }) => (
   <motion.ul
-    className="m-0 p-0 p-[25px] absolute top-[100px] w-[230px]"
+    className="m-0 p-[25px] absolute top-[100px] w-[230px]"
     variants={variantsNavigation}
   >
     {links.map((link, i) => (
@@ -79,7 +79,7 @@ const sidebar = {
     },
   }),
   closed: {
-    clipPath: "circle(30px at 40px 40px)",
+    clipPath: "circle(30px at 34px 34px)",
     transition: {
       delay: 0.5,
       type: "spring",
@@ -92,8 +92,8 @@ const sidebar = {
 const Path = (props: any) => (
   <motion.path
     fill="transparent"
-    strokeWidth="3"
-    stroke="hsl(0, 0%, 18%)"
+    strokeWidth="2"
+    stroke="white"
     strokeLinecap="round"
     {...props}
   />
@@ -102,7 +102,7 @@ const Path = (props: any) => (
 const MenuToggle: FC<{ toggle: Cycle }> = ({ toggle }) => (
   <button
     onClick={() => toggle()}
-    className="absolute w-[60px] h-[60px] rounded-full flex items-center left-[10px] top-[10px] justify-center bg-transparent"
+    className="absolute w-[40px] h-[40px] rounded-full flex items-center left-[16px] top-[16px] justify-center bg-transparent text-white"
   >
     <svg width="23" height="23" viewBox="0 0 23 23">
       <Path
@@ -142,7 +142,7 @@ const Navbar = () => {
         className="fixed z-40 top-0 left-0 bottom-0"
       >
         <motion.div
-          className="absolute top-0 left-0 bottom-0 w-screen bg-white"
+          className="absolute top-0 left-0 bottom-0 w-screen bg-opacity-20 backdrop-blur-md text-white border border-white"
           variants={sidebar}
         />
         <Navigation toggle={() => toggleOpen()} />
