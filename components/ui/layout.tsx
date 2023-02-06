@@ -33,11 +33,11 @@ const neue = localFont({
 const Layout: FC<{ children: ReactNode }> = ({ children }) => {
   const { t } = useTranslation();
   return (
-    <div className="overflow-x-hidden overflow-y-visible">
+    <div
+      className={`overflow-x-hidden overflow-y-visible ${montserrat.className} font-medium ${neue.variable} `}
+    >
       <Header />
-      <main className={`${montserrat.className} font-medium ${neue.variable} `}>
-        {children}
-      </main>
+      <main>{children}</main>
     </div>
   );
 };

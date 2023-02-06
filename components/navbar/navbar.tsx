@@ -32,7 +32,7 @@ const MenuItem: FC<{ toggle: Cycle; link: string }> = ({ link, toggle }) => {
       whileTap={{ scale: 0.95 }}
     >
       <Link className="" href={`#${link}`} onClick={() => toggle()}>
-        <div className="rounded-[5px] w-screen  flex-1 text-white text-xl font-medium">
+        <div className="rounded-[5px] w-screen flex-1 text-white text-xl font-medium font-neue">
           {t(`header.${link}`)}
         </div>
       </Link>
@@ -79,7 +79,7 @@ const sidebar = {
     },
   }),
   closed: {
-    clipPath: "circle(30px at 34px 34px)",
+    clipPath: "circle(0px at 34px 34px)",
     transition: {
       delay: 0.5,
       type: "spring",
@@ -102,7 +102,7 @@ const Path = (props: any) => (
 const MenuToggle: FC<{ toggle: Cycle }> = ({ toggle }) => (
   <button
     onClick={() => toggle()}
-    className="absolute w-[40px] h-[40px] rounded-full flex items-center left-[16px] top-[16px] justify-center bg-transparent text-white"
+    className="absolute w-[40px] h-[40px] rounded-full flex items-center left-[12px] top-[14px] justify-center bg-transparent text-white"
   >
     <svg width="23" height="23" viewBox="0 0 23 23">
       <Path
