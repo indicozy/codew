@@ -33,7 +33,7 @@ const Locales = ({ localeNow }: { localeNow: string }) => {
               <button
                 className={`${
                   active ? "bg-default text-white" : "text-white"
-                } flex uppercase  w-full items-center rounded-xl px-2 py-2`}
+                } flex uppercase  w-full items-center rounded-xl px-2 py-2 text-sm font-semibold`}
                 onClick={() => updateLanguage(locale)}
               >
                 {locale}
@@ -51,7 +51,7 @@ export function LocaleSwitch() {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
-        <Menu.Button className="uppercase inline-flex items-center w-full justify-center rounded-full bg-default px-4 py-2 text-base font-bold text-white hover:text-rose-100 hover:bg-opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 font-mont">
+        <Menu.Button className="uppercase inline-flex items-center w-full justify-center rounded-full bg-default px-4 py-2 text-sm font-bold text-white hover:text-rose-100 hover:bg-opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 font-mont">
           {t("locale")}
           <IconChevronDown className="ml-2 -mr-1 h-5 w-5" aria-hidden="true" />
         </Menu.Button>

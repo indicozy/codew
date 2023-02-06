@@ -9,6 +9,8 @@ import {
 import Link from "next/link";
 import { FC } from "react";
 import { ComponentAnchor } from "../componentAnchor";
+import Image from "next/image";
+import Container from "../ui/container";
 
 type Badge = { icon: TablerIcon; name: string; href: string };
 
@@ -29,22 +31,29 @@ export function Team() {
   const { t } = useTranslation();
   return (
     <ComponentAnchor id="team">
-      <Headline>{t("team.headline")}</Headline>
-      <div className="grid grid-cols-2">
-        <div className="grid place-items-center">
-          <div className="max-w-screen-sm text-xl">
-            <div>{t("team.description")}</div>
-            <div className="flex mt-4 space-x-2">
-              {badges.map((badge, i) => (
-                <Badge badge={badge} key={i} />
-              ))}
+      <Container>
+        <Headline>{t("team.headline")}</Headline>
+        <div className="grid grid-cols-2 mt-8">
+          <div className="grid place-items-center">
+            <div className="max-w-screen-sm text-xl">
+              <div>{t("team.description")}</div>
+              <div className="flex mt-4 space-x-2">
+                {badges.map((badge, i) => (
+                  <Badge badge={badge} key={i} />
+                ))}
+              </div>
             </div>
           </div>
+          <div className="grid place-items-center">
+            <Image
+              src="/assets/team.jpg"
+              width={1000}
+              height={1000}
+              alt="ACM-W Team"
+            />
+          </div>
         </div>
-        <div className="grid place-items-center">
-          <div className="mx-auto w-[40rem] h-[40rem] bg-green-400"></div>
-        </div>
-      </div>
+      </Container>
     </ComponentAnchor>
   );
 }
