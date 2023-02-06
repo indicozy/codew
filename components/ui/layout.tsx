@@ -7,6 +7,7 @@ import { Header } from "../main/header";
 const montserrat = Montserrat({
   weight: ["400", "500", "700"],
   subsets: ["latin", "cyrillic", "latin-ext", "cyrillic-ext"],
+  variable: "--font-mont",
 });
 
 const neue = localFont({
@@ -34,7 +35,7 @@ const Layout: FC<{ children: ReactNode }> = ({ children }) => {
   const { t } = useTranslation();
   return (
     <div
-      className={`overflow-x-hidden overflow-y-visible ${montserrat.className} font-medium ${neue.variable} `}
+      className={`overflow-x-hidden overflow-y-visible ${montserrat.className} font-medium ${neue.variable} ${montserrat.variable}`}
     >
       <Header />
       <main>{children}</main>
