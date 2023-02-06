@@ -15,7 +15,7 @@ export function Footer() {
             alt="epam"
           />
           <Image
-            className="w-20 sm:w-40"
+            className="w-12 sm:w-24"
             src="/acm/pink.svg"
             width={300}
             height={300}
