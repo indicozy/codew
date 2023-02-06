@@ -1,6 +1,7 @@
 import { useTranslation } from "next-export-i18n";
 import { FC } from "react";
 import { ComponentAnchor } from "../componentAnchor";
+import BackgroundImage from "../ui/backgroundImage";
 import Container from "../ui/container";
 import { Headline } from "../ui/headline";
 
@@ -16,15 +17,18 @@ export function Faq() {
     </div>
   );
   return (
-    <ComponentAnchor id="faq">
-      <Container>
-        <Headline>{t("faq.headline")}</Headline>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-          {questions.map((question: TypeQuestion, i: number) => (
-            <Question key={i} question={question} />
-          ))}
-        </div>
-      </Container>
-    </ComponentAnchor>
+    <>
+      <BackgroundImage image={"/assets/99.png"} position="left" />
+      <ComponentAnchor id="faq">
+        <Container>
+          <Headline>{t("faq.headline")}</Headline>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            {questions.map((question: TypeQuestion, i: number) => (
+              <Question key={i} question={question} />
+            ))}
+          </div>
+        </Container>
+      </ComponentAnchor>
+    </>
   );
 }

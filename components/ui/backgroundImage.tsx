@@ -1,17 +1,31 @@
+import { useScroll, motion, MotionValue, useTransform } from "framer-motion";
 import Image from "next/image";
-import { FC } from "react";
+
+import { FC, useRef } from "react";
+
+function useParallax(value: MotionValue<number>, distance: number) {
+  return useTransform(value, [0, 1], [-distance, distance]);
+}
 
 const BackgroundImage: FC<{ image: string; position: "left" | "right" }> = ({
   image,
   position,
 }) => {
-  return <></>;
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref });
+  const y = useParallax(scrollYProgress, 300);
   return (
-    <div className="relative w-screen">
-      <div className={`absolute -top-72 -${position}-72 w-[36rem] h-36rem`}>
+    <div className="relative w-screen" ref={ref}>
+      <motion.div
+        style={{ y }}
+        className={`absolute top-[2rem] sm:top-[-6rem] 
+        ${position === "right" ? "right-[-6rem]" : "left-[-12rem]"} ${
+          position === "right" ? "sm:right-[-18rem]" : "sm:left-[-18rem]"
+        } w-[18rem] sm:w-[36rem] z-[-1]`}
+      >
         <div className="relative">
           <div
-            className={`absolute top-0 left-0 right-0 bottom-0 blur-[100px] -z-1 w-[30rem] h-[30rem] bg-red-300 rounded-full`}
+            className={`absolute top-0 left-0 right-0 bottom-0 blur-[120px] -z-1 w-[20rem] h-[20rem] sm:w-[32rem] sm:h-[32rem] bg-[#DDF9F1] rounded-full`}
           ></div>
           <div className={`absolute top-0 left-0 right-0 bottom-0 z-2`}>
             <Image
@@ -23,7 +37,7 @@ const BackgroundImage: FC<{ image: string; position: "left" | "right" }> = ({
             />
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
