@@ -9,8 +9,8 @@ export function Description() {
   return (
     <ComponentAnchor id="about">
       <Container>
-        <div className="grid grid-cols-1 sm:grid-cols-2">
-          <div className="max-w-screen-sm text-base sm:text-xl sm:order-1 order-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 text-lg">
+          <div className="grid place-items-center order-2 sm:order-1 mt-8 sm:mt-0">
             {t("about.description")}
           </div>
           <div className="w-full sm:order-2 order-1">

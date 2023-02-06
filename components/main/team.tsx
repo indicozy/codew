@@ -11,14 +11,15 @@ import { FC } from "react";
 import { ComponentAnchor } from "../componentAnchor";
 import Image from "next/image";
 import Container from "../ui/container";
+import { Socials } from "../../data/info";
 
 type Badge = { icon: TablerIcon; name: string; href: string };
 
 export function Team() {
   const badges: Badge[] = [
-    { icon: IconBrandInstagram, name: "Instagram", href: "https://t.me" },
-    { icon: IconBrandTelegram, name: "Telegram", href: "https://t.me" },
-    { icon: IconBrandYoutube, name: "YouTube", href: "https://t.me" },
+    { icon: IconBrandInstagram, name: "Instagram", href: Socials.instagram },
+    { icon: IconBrandTelegram, name: "Telegram", href: Socials.telegram },
+    { icon: IconBrandYoutube, name: "YouTube", href: Socials.youtube },
   ];
   const Badge: FC<{ badge: Badge }> = ({ badge }) => (
     <Link href={badge.href}>
@@ -33,23 +34,30 @@ export function Team() {
     <ComponentAnchor id="team">
       <Container>
         <Headline>{t("team.headline")}</Headline>
-        <div className="grid grid-cols-2 mt-8">
-          <div className="grid place-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 mt-8">
+          <div className="grid place-items-center order-2 sm:order-1 mt-8 sm:mt-0">
             <div className="max-w-screen-sm text-xl">
               <div>{t("team.description")}</div>
-              <div className="flex mt-4 space-x-2">
+              <div className="flex mt-4 space-x-10">
                 {badges.map((badge, i) => (
-                  <Badge badge={badge} key={i} />
+                  <Link
+                    href={badge.href}
+                    key={i}
+                    className="text-base text-rose-300"
+                  >
+                    {badge.name}
+                  </Link>
                 ))}
               </div>
             </div>
           </div>
-          <div className="grid place-items-center">
+          <div className="grid place-items-center order-1 sm:order-2">
             <Image
               src="/assets/team.jpg"
               width={1000}
               height={1000}
               alt="ACM-W Team"
+              className="rounded-2xl"
             />
           </div>
         </div>

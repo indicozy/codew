@@ -7,39 +7,39 @@ export function Footer() {
   return (
     <footer className="p-4">
       <Container>
-        <div className="grid grid-cols-3 place-items-center">
+        <div className="grid grid-cols-3 place-items-center max-w-6xl mx-auto">
           <Image
-            className="w-20 sm:w-40"
+            className="w-24 sm:w-48"
             src="/sponsor/tassay.svg"
             width={300}
             height={300}
             alt="epam"
           />
           <Image
-            className="w-12 sm:w-24"
+            className="w-16 sm:w-28"
             src="/acm/pink.svg"
             width={300}
             height={300}
             alt="epam"
           />
           <Image
-            className="w-20 sm:w-40"
+            className="w-24 sm:w-48"
             src="/sponsor/umag.svg"
             width={300}
             height={300}
             alt="epam"
           />
         </div>
-        <div className="grid grid-cols-2 place-items-center mt-8">
+        <div className="grid grid-cols-2 place-items-center max-w-4xl mx-auto mt-8">
           <Image
-            className="w-20 sm:w-40"
+            className="w-24 sm:w-48"
             src="/sponsor/zapis.svg"
             width={300}
             height={300}
             alt="epam"
           />
           <Image
-            className="w-20 sm:w-40"
+            className="w-24 sm:w-48"
             src="/sponsor/epam.png"
             width={300}
             height={300}
