@@ -18,7 +18,7 @@ const BackgroundImage: FC<{ image: string; position: "left" | "right" }> = ({
     <div className="relative w-screen" ref={ref}>
       <motion.div
         style={{ y }}
-        className={`absolute top-[2rem] sm:top-[-6rem] 
+        className={`absolute top-[4rem] sm:top-[-6rem] 
         ${position === "right" ? "right-[-6rem]" : "left-[-12rem]"} ${
           position === "right" ? "sm:right-[-18rem]" : "sm:left-[-18rem]"
         } w-[18rem] sm:w-[36rem] z-[-1]`}
