@@ -10,7 +10,7 @@ function Girl() {
   return <primitive object={obj.scene} />;
 }
 
-function Box(props) {
+function Box(props: any) {
   // This reference gives us direct access to the THREE.Mesh object
   const ref = useRef();
   // Hold state for hovered and clicked events
