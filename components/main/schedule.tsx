@@ -18,7 +18,7 @@ export function Schedule() {
       <ol className="mx-auto z-0 -space-y-1">
         {schedules.map((schedule, i) => (
           <li className="my-0" key={i}>
-            <div className="flex flex-nowrap relative mr-8 ml-8 ">
+            <div className="flex flex-nowrap relative">
               <div className="flex items-center">
                 <div className="text-2xl text-right w-40">{schedule.time}</div>
               </div>

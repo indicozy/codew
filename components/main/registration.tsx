@@ -1,3 +1,5 @@
+import { ComponentAnchor } from "../componentAnchor";
+
 export function Registration() {
-  return <>registration</>;
+  return <ComponentAnchor id="schedule">registration</ComponentAnchor>;
 }
