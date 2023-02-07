@@ -46,7 +46,7 @@ export default function HeroDesktop() {
         {/* <spotLight position={[100, 100, 100]} angle={0.15} penumbra={0.1} /> */}
         <pointLight position={[-2, 1, 5]} color={0x7b56e9} />
         <pointLight position={[3, 1, 5]} color={0xff6f60} />
-        <Box position={[0, -0.7, 3.7]} />
+        <Box position={[0, -0.7, 3.65]} />
       </Canvas>
     </div>
   );
