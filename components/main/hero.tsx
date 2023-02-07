@@ -22,8 +22,7 @@ export function Hero() {
     <>
       <BackgroundImage image={"/assets/56.png"} position="right" />
       <div className="h-[calc(100vh-4rem)] scroll-mt-20" id="welcome">
-        {/* <Container> */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 h-[calc(100vh-4rem-12rem)] place-items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 h-[calc(100vh-4rem-8rem)] place-items-center">
           <div className="grid place-items-start sm:place-items-center">
             <HeroDesktopDynamic />
           </div>
@@ -37,10 +36,9 @@ export function Hero() {
             </div>
           </div>
         </div>
-        <div className="grid place-items-center mt-16">
+        <div className="grid place-items-center mt-4">
           <Button />
         </div>
-        {/* </Container> */}
       </div>
     </>
   );
