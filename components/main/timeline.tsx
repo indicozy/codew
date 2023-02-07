@@ -23,13 +23,7 @@ const Timelines: FC<{ timelines: TypeTimelines[] }> = ({ timelines }) => {
           className="flex flex-col items-center mx-auto text-xl text-center my-12"
         >
           <div className="w-48 sm:w-60">
-            <Image
-              src={images[i]}
-              width="300"
-              height="300"
-              alt=""
-              layout="responsive"
-            />
+            <Image src={images[i]} width="300" height="300" alt="" />
           </div>
           <div className="text-xl leading-loose sm:text-2xl sm:leading-relaxed">
             <p>{timeline.text1}</p>
