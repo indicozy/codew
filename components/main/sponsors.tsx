@@ -27,16 +27,16 @@ export function Sponsors() {
       description: t("sponsors.epam"),
     },
     {
-      href: "/sponsor/tassay.svg",
-      height: 300,
-      width: 300,
-      description: t("sponsors.zapis"),
-    },
-    {
       href: "/sponsor/zapis.svg",
       height: 300,
       width: 300,
       description: t("sponsors.tassay"),
+    },
+    {
+      href: "/sponsor/tassay.svg",
+      height: 300,
+      width: 300,
+      description: t("sponsors.zapis"),
     },
   ];
   return (

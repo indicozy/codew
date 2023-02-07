@@ -10,21 +10,21 @@ export function Footer() {
         <div className="grid grid-cols-3 place-items-center max-w-6xl mx-auto">
           <Image
             className="w-24 sm:w-48"
-            src="/sponsor/tassay.svg"
+            src="/sponsor/umag.svg"
             width={300}
             height={300}
-            alt="epam"
+            alt="umag"
           />
           <Image
             className="w-16 sm:w-28"
             src="/acm/pink.svg"
             width={300}
             height={300}
-            alt="epam"
+            alt="acm"
           />
           <Image
             className="w-24 sm:w-48"
-            src="/sponsor/umag.svg"
+            src="/sponsor/epam.png"
             width={300}
             height={300}
             alt="epam"
@@ -36,14 +36,14 @@ export function Footer() {
             src="/sponsor/zapis.svg"
             width={300}
             height={300}
-            alt="epam"
+            alt="zapis"
           />
           <Image
             className="w-24 sm:w-48"
-            src="/sponsor/epam.png"
+            src="/sponsor/tassay.svg"
             width={300}
             height={300}
-            alt="epam"
+            alt="tassay"
           />
         </div>
         <div className="flex items-center space-x-8 mx-auto flex-nowrap justify-center mt-8 text-rose-300">
