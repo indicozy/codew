@@ -54,6 +54,9 @@ export function Footer() {
         <div className="text-center text-sm text-gray-600 mt-8 italic">
           © 2023 NU ACM-W SC All rights reserved.
         </div>
+        <div className="text-center text-sm text-gray-600 mt-8 italic">
+          Made with love by indicozy, aruryss, Adam Cosman & yells
+        </div>
       </Container>
     </footer>
   );
