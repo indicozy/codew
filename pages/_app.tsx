@@ -2,7 +2,7 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Layout from "../components/ui/layout";
 import { useState } from "react";
-import { QueryClient, QueryClientProvider } from "@pankod/refine-core";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 export default function App({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(() => new QueryClient());

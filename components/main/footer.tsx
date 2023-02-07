@@ -54,8 +54,12 @@ export function Footer() {
         <div className="text-center text-sm text-gray-600 mt-8 italic">
           © 2023 NU ACM-W SC All rights reserved.
         </div>
-        <div className="text-center text-sm text-gray-600 mt-8">
-          Made with love by indicozy, aruryss, Adam Cosman & yells
+        <div className="text-center text-xs text-gray-400 mt-8">
+          Made with ❤️ by{" "}
+          <a className="text-rose-300" href="https://github.com/indicozy">
+            indicozy
+          </a>
+          , aruryss & Adam Cosman
         </div>
       </Container>
     </footer>
