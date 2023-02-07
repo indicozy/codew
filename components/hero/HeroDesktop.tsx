@@ -40,7 +40,7 @@ function Box(props: any) {
 
 export default function HeroDesktop() {
   return (
-    <div className="h-[calc(50vh)] sm:h-[calc(100vh-4rem-12rem)] w-screen sm:w-[calc(50vw)]">
+    <div className="h-[calc(50vh)] lg:h-[calc(100vh-4rem-12rem)] w-screen lg:w-[calc(50vw)]">
       <Canvas flat>
         {/* <ambientLight intensity={10} /> */}
         {/* <spotLight position={[100, 100, 100]} angle={0.15} penumbra={0.1} /> */}
