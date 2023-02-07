@@ -36,7 +36,7 @@ export function Hero() {
             </div>
           </div>
         </div>
-        <div className="grid place-items-center mt-4">
+        <div className="grid place-items-center">
           <Button />
         </div>
       </div>
