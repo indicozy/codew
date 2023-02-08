@@ -16,7 +16,7 @@ export const links = [
 ];
 const Element = ({ link }: { link: string }) => {
   const { t } = useTranslation();
-  return <LinkHover href={`#${link}`}>{t(`header.${link}`)}</LinkHover>;
+  return <LinkHover href={`/#${link}`}>{t(`header.${link}`)}</LinkHover>;
 };
 
 const Links = () => {
