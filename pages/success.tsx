@@ -34,7 +34,7 @@ export default function Success({
   languages: string[];
 }) {
   const ticketRef = useRef<any>(null);
-  const bruhRef = useRef<any>(null);
+  // const bruhRef = useRef<any>(null);
   useEffect(() => {
     function animateOnMouseOver(e: any) {
       const deg = {
@@ -56,9 +56,9 @@ export default function Success({
         x: 30 * ((x / 5) * 2 - 1),
         y: 30 * ((((y - 7) % 10) / 5) * 2 - 1),
       };
-      if (bruhRef) {
-        bruhRef.current.innerHTML = JSON.stringify({ x, y, z });
-      }
+      // if (bruhRef) {
+      //   bruhRef.current.innerHTML = JSON.stringify({ x, y, z });
+      // }
       if (ticketRef.current) {
         ticketRef.current.style.transform = `rotateX(${
           deg.y
@@ -139,7 +139,7 @@ export default function Success({
             <IconCopy stroke={1.2} /> Copy URL
           </button>
         </div>
-        <div className="w-40" ref={bruhRef}></div>
+        {/* <div className="w-40" ref={bruhRef}></div> */}
         <Container>
           <div className="text-center mt-20">
             <div className="text-2xl font-semibold">
