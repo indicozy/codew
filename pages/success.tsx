@@ -2,6 +2,7 @@ import { IconCopy, IconShare } from "@tabler/icons";
 import { GetServerSideProps } from "next";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
+import Container from "../components/ui/container";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { ticketId } = context.query;
@@ -65,7 +66,7 @@ export default function Success({
   return (
     <>
       <div
-        className={`absolute top-[calc(50%-8rem)] sm:top-[calc(50%-18rem)] left-[calc(50%-8rem)] sm:left-[calc(50%-18rem)] w-[18rem] sm:w-[36rem] z-[-1]`}
+        className={`absolute top-[calc(50%-16rem)] sm:top-[calc(50%-18rem)] left-[calc(50%-8rem)] sm:left-[calc(50%-18rem)] w-[18rem] sm:w-[36rem] z-[-1]`}
       >
         <div className="relative">
           <div
@@ -83,9 +84,9 @@ export default function Success({
         </div>
       </div>
       <div className="absolute w-screen h-[calc(100vh-5rem)] flex flex-col items-center justify-center">
-        <div>
+        <div className="scale-[.6] sm:scale-100">
           <div
-            className="w-[40rem] h-[20rem] border border-zinc-600 rounded-[60px] flex backdrop-blur-lg bg-bg bg-opacity-20"
+            className=" w-[40rem] h-[20rem] border border-zinc-600 rounded-[60px] flex backdrop-blur-lg bg-bg bg-opacity-20"
             ref={ticketRef}
           >
             <div className="w-[30rem] p-10 flex flex-col justify-between">
@@ -115,25 +116,27 @@ export default function Success({
               </div>
             </div>
           </div>
-          <div className="flex space-x-8 justify-center mt-8">
-            <button className="bg-transparent flex text-lg items-center backdrop-blur-lg py-2 px-4 rounded-xl bg-zinc-600 bg-opacity-30 hover:bg-opacity-50">
-              <IconShare stroke={1.2} /> <span className="w-2"></span> Share URL
-            </button>
+        </div>
+        <div className="flex space-x-8 justify-center mt-8">
+          <button className="bg-transparent flex text-lg items-center backdrop-blur-lg py-2 px-4 rounded-xl bg-zinc-600 bg-opacity-30 hover:bg-opacity-50">
+            <IconShare stroke={1.2} /> <span className="w-2"></span> Share URL
+          </button>
 
-            <button className="bg-transparent flex text-lg items-center backdrop-blur-lg py-2 px-4 rounded-xl bg-zinc-600 bg-opacity-30 hover:bg-opacity-50">
-              <IconCopy stroke={1.2} /> Copy URL
-            </button>
-          </div>
+          <button className="bg-transparent flex text-lg items-center backdrop-blur-lg py-2 px-4 rounded-xl bg-zinc-600 bg-opacity-30 hover:bg-opacity-50">
+            <IconCopy stroke={1.2} /> Copy URL
+          </button>
         </div>
-        <div className="text-center mt-20">
-          <div className="text-2xl font-semibold">
-            Registration was successful!
+        <Container>
+          <div className="text-center mt-20">
+            <div className="text-2xl font-semibold">
+              Registration was successful!
+            </div>
+            <div className="text-xl">
+              Your application was received. We will contact you for the next
+              steps by email. Look out!
+            </div>
           </div>
-          <div className="text-xl">
-            Your application was received. We will contact you for the next
-            steps by email. Look out!
-          </div>
-        </div>
+        </Container>
       </div>
     </>
   );
