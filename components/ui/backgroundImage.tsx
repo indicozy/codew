@@ -28,7 +28,13 @@ const BackgroundImage: FC<{ image: string; position: "left" | "right" }> = ({
             className={`absolute top-0 left-0 right-0 bottom-0 blur-[120px] -z-1 w-[20rem] h-[20rem] sm:w-[32rem] sm:h-[32rem] bg-[#DDF9F1] bg-opacity-60 rounded-full`}
           ></div>
           <div className={`absolute top-0 left-0 right-0 bottom-0 z-2`}>
-            <Image src={image} width={500} height={500} alt="" />
+            <Image
+              src={image}
+              width={500}
+              height={500}
+              alt=""
+              loading="eager"
+            />
           </div>
         </div>
       </motion.div>

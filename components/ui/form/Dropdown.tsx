@@ -12,6 +12,7 @@ const Dropdown: FC<{
   validation: any;
   errorText?: string;
   variants: string[];
+  defaultText: string;
   register: any;
   selected?: string;
 }> = ({
@@ -24,6 +25,7 @@ const Dropdown: FC<{
   variants,
   register,
   errorText,
+  defaultText,
 }) => {
   const setSelected = (value: string) => {
     setValue(slug, value, {
@@ -33,14 +35,12 @@ const Dropdown: FC<{
   };
   register(slug, validation);
   return (
-    <div className="w-72">
+    <div className="my-2">
       <label className="block">{name}</label>
       <Listbox value={selected} onChange={setSelected}>
-        <div className="relative mt-1">
+        <div className="relative mt-1 w-96">
           <Listbox.Button className="relative w-full cursor-default rounded-lg bg-[#544761] py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
-            <span className="block truncate">
-              {selected || "Select Country"}
-            </span>
+            <span className="block truncate">{selected || defaultText}</span>
             <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
               <IconArrowsMoveVertical
                 className="h-5 w-5 text-[#DAD9D9]"
@@ -87,7 +87,7 @@ const Dropdown: FC<{
           </Transition>
         </div>
       </Listbox>
-      <div className="h-4">
+      <div className="h-6">
         {errors[slug] && (
           <span className="text-red-400 text-sm">
             {errorText || "*This field is required"}
