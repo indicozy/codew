@@ -8,6 +8,9 @@
     "hosted": "Hosted by ACM-W",
     "date": "10:30am, October 25, 2002"
   },
+  "footer": {
+    "love": "Made with ❤️ by"
+  },
   "header": {
     "welcome": "Басты бет",
     "about": "codeW туралы",
@@ -17,6 +20,38 @@
     "team": "Ұйымдастырушы топ",
     "faq": "FAQ",
     "registration": "Тіркелеу"
+  },
+  "form": {
+    "submit": "Submit",
+    "loading": "Loading",
+
+    "firstName": "First name",
+    "lastName": "Last name",
+    "dateOfBirth": "Date of Birth",
+    "citizenship": "Citizenship",
+    "cityOfResidence": "City of Residence",
+    "stateId": "State Id",
+    "schoolName": "School name",
+    "pursuingDegree": "Pursuing Degree",
+    "enrollmentVerification": "Enrollment Verification",
+    "graduationYear": "Graduation Year",
+    "email": "Email address",
+    "contestLanguage": "Contest Language",
+    "selectLanguage": "Select Language",
+    "programmingLanguages": "Programming Languages",
+    "selectLanguages": "Select Languages",
+    "cv": "CV",
+    "motivationLetter": "What motivates you to participate in codeW?",
+
+    "emailError": "Please verify your email.",
+    "errorDefault": "This field is required",
+
+    "multiSelect": {
+      "select": "Select multiple"
+    },
+    "textArea": {
+      "minimum": "minimum 100 words"
+    }
   },
   "hero": {
     "register": "Register",

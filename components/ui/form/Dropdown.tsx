@@ -2,6 +2,7 @@ import { FC } from "react";
 import { Fragment, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { IconArrowsMoveVertical, IconCheck } from "@tabler/icons";
+import { useTranslation } from "next-export-i18n";
 // import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 
 const Dropdown: FC<{
@@ -34,6 +35,7 @@ const Dropdown: FC<{
     });
   };
   register(slug, validation);
+  const { t } = useTranslation();
   return (
     <div className="my-2">
       <label className="block">{name}*:</label>
@@ -90,7 +92,7 @@ const Dropdown: FC<{
       <div className="h-6">
         {errors[slug] && (
           <span className="text-red-400 text-sm">
-            {errorText || "*This field is required"}
+            *{errorText || t("form.errorDefault")}
           </span>
         )}
       </div>

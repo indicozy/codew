@@ -1,3 +1,4 @@
+import { useTranslation } from "next-export-i18n";
 import Image from "next/image";
 import Link from "next/link";
 import { Socials } from "../../data/info";
@@ -5,6 +6,7 @@ import Container from "../ui/container";
 import LinkHover from "../ui/linkHover";
 
 export function Footer() {
+  const { t } = useTranslation();
   return (
     <footer className="p-4">
       <Container>
@@ -62,7 +64,7 @@ export function Footer() {
           © 2023 NU ACM-W SC All rights reserved.
         </div>
         <div className="text-center text-xs text-gray-400 mt-8">
-          Made with ❤️ by{" "}
+          {t("footer.love")}{" "}
           <LinkHover
             isThin
             customColor="rose"

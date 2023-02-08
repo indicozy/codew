@@ -2,8 +2,9 @@ import { FC, useRef, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import dayjs from "dayjs";
-import { ru } from "date-fns/locale";
+import { ru, enUS } from "date-fns/locale";
 import customParseFormat from "dayjs/plugin/customParseFormat";
+import { useTranslation } from "next-export-i18n";
 dayjs.extend(customParseFormat);
 
 const DateField: FC<{
@@ -30,14 +31,15 @@ const DateField: FC<{
   register(slug, validation);
   let valueDate;
   if (value) {
-    console.log(value);
+    // console.log(value);
     const dayjsDate = dayjs(value, "DD/MM/YYYY");
-    console.log(dayjsDate);
+    // console.log(dayjsDate);
     valueDate = dayjsDate.toDate();
-    console.log(valueDate);
+    // console.log(valueDate);
   } else {
     valueDate = null;
   }
+  const { t } = useTranslation();
   return (
     <div>
       {/* <div>{JSON.stringify(value)}</div> */}
@@ -45,11 +47,11 @@ const DateField: FC<{
       {/* {JSON.stringify(valueDate)} */}
       <DatePicker
         selected={valueDate}
-        locale={ru}
+        locale={t("locale") === "en" ? enUS : ru} //  // TODO text hydration
         dateFormat="dd/MM/yyyy"
         // format="dd/MM/yyyy"
         onChange={(date: Date | null) => {
-          console.log(date);
+          // console.log(date);
           if (!date) {
             setValue(slug, null, {
               shouldValidate: true,
@@ -58,7 +60,7 @@ const DateField: FC<{
             return;
           }
           const formatted = dayjs(date).format("DD/MM/YYYY");
-          console.log(formatted);
+          // console.log(formatted);
           //   console.log(formatted);
           setValue(slug, formatted, {
             shouldValidate: true,
@@ -69,7 +71,7 @@ const DateField: FC<{
       <div className="h-6">
         {errors[slug] && (
           <span className="text-red-400 text-sm">
-            {errorText || "*This field is required"}
+            *{errorText || t("form.errorDefault")}
           </span>
         )}
       </div>

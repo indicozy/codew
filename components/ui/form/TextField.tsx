@@ -1,3 +1,4 @@
+import { useTranslation } from "next-export-i18n";
 import { FC } from "react";
 
 const TextField: FC<{
@@ -8,6 +9,7 @@ const TextField: FC<{
   validation: any;
   errorText?: string;
 }> = ({ errors, register, name, slug, validation, errorText }) => {
+  const { t } = useTranslation();
   return (
     <div>
       <label className="block">{name}*: </label>
@@ -19,7 +21,7 @@ const TextField: FC<{
       <div className="h-6">
         {errors[slug] && (
           <span className="text-red-400 text-sm">
-            {errorText || "*This field is required"}
+            *{errorText || t("form.errorDefault")}
           </span>
         )}
       </div>

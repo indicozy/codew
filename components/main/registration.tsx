@@ -14,6 +14,7 @@ import DateField from "../ui/form/Datepicker";
 import MultiSelect from "../ui/form/MultiSelect";
 import languages from "../../data/languages";
 import TextAreaField from "../ui/form/TextAreaField";
+import { useTranslation } from "next-export-i18n";
 
 // const incomingDataSchema = z.object({
 //   firstName: z.string(),
@@ -63,6 +64,7 @@ export function Registration() {
     values.enrollmentVerification = values.enrollmentVerification[0];
     mutate(values);
   };
+  const { t } = useTranslation();
   return (
     <ComponentAnchor id="registration">
       <Container>
@@ -77,21 +79,21 @@ export function Registration() {
             <TextField
               register={register}
               errors={errors}
-              name="First name"
+              name={t("form.firstName")}
               slug="firstName"
               validation={{ required: true }}
             />
             <TextField
               register={register}
               errors={errors}
-              name="Last Name"
+              name={t("form.lastName")}
               slug="lastName"
               validation={{ required: true }}
             />
             <DateField
               defaultText="01/01/2002"
               errors={errors}
-              name="Date of Birth"
+              name={t("form.dateOfBirth")}
               slug="dateOfBirth"
               setValue={setValue}
               register={register}
@@ -102,7 +104,7 @@ export function Registration() {
             <Dropdown
               defaultText="Select Country"
               errors={errors}
-              name="Citizenship"
+              name={t("form.citizenship")}
               slug="citizenship"
               setValue={setValue}
               register={register}
@@ -113,35 +115,35 @@ export function Registration() {
             <TextField
               register={register}
               errors={errors}
-              name="City of Residence"
+              name={t("form.cityOfResidence")}
               slug="cityOfResidence"
               validation={{ required: true }}
             />
             <FileField
               register={register}
               errors={errors}
-              name="State Id"
+              name={t("form.stateId")}
               slug="stateId"
               validation={{ required: true }}
             />
             <TextField
               register={register}
               errors={errors}
-              name="School name"
+              name={t("form.schoolName")}
               slug="schoolName"
               validation={{ required: true }}
             />
             <TextField
               register={register}
               errors={errors}
-              name="Pursuing Degree"
+              name={t("form.pursuingDegree")}
               slug="pursuingDegree"
               validation={{ required: true }}
             />
             <FileField
               register={register}
               errors={errors}
-              name="Enrollment Verification"
+              name={t("form.enrollmentVerification")}
               slug="enrollmentVerification"
               validation={{ required: true }}
             />
@@ -149,21 +151,25 @@ export function Registration() {
               errorText="format must be like 2018"
               register={register}
               errors={errors}
-              name="Graduation Year"
+              name={t("form.graduationYear")}
               slug="graduationYear"
               validation={{ required: true, pattern: /^[0-9]{4}$/ }}
             />
             <TextField
               register={register}
               errors={errors}
-              name="Email address"
+              name={t("form.email")}
               slug="email"
-              validation={{ required: true }}
+              errorText={t("form.emailError")}
+              validation={{
+                required: true,
+                pattern: /(.+)@(.+){2,}\.(.+){2,}/,
+              }}
             />
             <Dropdown
-              defaultText="Select Language"
+              defaultText={t("form.selectLanguage")}
               errors={errors}
-              name="Contest Language"
+              name={t("form.contestLanguage")}
               slug="contestLanguage"
               setValue={setValue}
               register={register}
@@ -173,8 +179,8 @@ export function Registration() {
             />
             <MultiSelect
               errors={errors}
-              defaultText="Select Languages"
-              name="Programming Languages"
+              defaultText={t("form.selectLanguages")}
+              name={t("form.programmingLanguages")}
               slug="programmingLanguages"
               setValue={setValue}
               register={register}
@@ -185,7 +191,7 @@ export function Registration() {
             <FileField
               register={register}
               errors={errors}
-              name="CV"
+              name={t("form.cv")}
               slug="cv"
               validation={{ required: true }}
             />
@@ -194,7 +200,7 @@ export function Registration() {
             <TextAreaField
               register={register}
               errors={errors}
-              name="What motivates you to participate in codeW?"
+              name={t("form.motivationLetter")}
               slug="motivationLetter"
               errorText="Minimum 100 words."
               validation={{
@@ -215,7 +221,7 @@ export function Registration() {
                   : "bg-default hover:bg-rose-600 transition-all duration-150"
               } rounded-full`}
             >
-              Submit
+              {isLoading ? t("form.loading") : t("form.submit")}
             </button>
           </div>
         </form>

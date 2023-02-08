@@ -8,7 +8,41 @@
     "hosted": "Hosted by ACM-W",
     "date": "10:30am, October 25, 2002"
   },
-  "register": "Register",
+  "footer": {
+    "love": "Made with ❤️ by"
+  },
+  "form": {
+    "submit": "Submit",
+    "loading": "Loading",
+
+    "firstName": "First name",
+    "lastName": "Last name",
+    "dateOfBirth": "Date of Birth",
+    "citizenship": "Citizenship",
+    "cityOfResidence": "City of Residence",
+    "stateId": "State Id",
+    "schoolName": "School name",
+    "pursuingDegree": "Pursuing Degree",
+    "enrollmentVerification": "Enrollment Verification",
+    "graduationYear": "Graduation Year",
+    "email": "Email address",
+    "contestLanguage": "Contest Language",
+    "selectLanguage": "Select Language",
+    "programmingLanguages": "Programming Languages",
+    "selectLanguages": "Select Languages",
+    "cv": "CV",
+    "motivationLetter": "What motivates you to participate in codeW?",
+
+    "emailError": "Please verify your email.",
+    "errorDefault": "This field is required",
+
+    "multiSelect": {
+      "select": "Select multiple"
+    },
+    "textArea": {
+      "minimum": "minimum 100 words"
+    }
+  },
   "header": {
     "welcome": "Welcome",
     "about": "About",
@@ -20,6 +54,7 @@
     "registration": "Registration"
   },
   "hero": {
+    "register": "Register",
     "welcome": {
       "1": "Welcome to",
       "2": "CodeW 2023"
