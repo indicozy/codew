@@ -57,7 +57,7 @@ export function Registration() {
     { onSuccess: () => router.push("/success") }
   );
 
-  const onSubmit = (values) => {
+  const onSubmit = (values: any) => {
     values.cv = values.cv[0];
     values.stateId = values.stateId[0];
     values.enrollmentVerification = values.enrollmentVerification[0];

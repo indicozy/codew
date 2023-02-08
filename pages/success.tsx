@@ -2,7 +2,6 @@ import { IconCopy, IconShare } from "@tabler/icons";
 import { GetServerSideProps } from "next";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
-import BackgroundImage from "../components/ui/backgroundImage";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { ticketId } = context.query;
@@ -35,7 +34,7 @@ export default function Success({
 }) {
   const ticketRef = useRef<any>(null);
   useEffect(() => {
-    function animateOnMouseOver(e) {
+    function animateOnMouseOver(e: any) {
       const deg = {
         x: 30 * ((e.clientX / window.innerWidth) * 2 - 1),
         y: 30 * ((e.clientY / window.innerHeight) * 2 - 1),
