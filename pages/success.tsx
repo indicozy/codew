@@ -53,7 +53,7 @@ export default function Success({
 
       const deg = {
         x: 30 * ((x / 360) * 2 - 1),
-        y: 30 * ((y / 360) * 2 - 1),
+        y: 30 * ((z / 360) * 2 - 1),
       };
       if (ticketRef.current) {
         ticketRef.current.style.transform = `rotateX(${
