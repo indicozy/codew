@@ -1,7 +1,7 @@
 import { IconCopy, IconShare } from "@tabler/icons";
 import { GetServerSideProps } from "next";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Container from "../components/ui/container";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
@@ -34,6 +34,7 @@ export default function Success({
   languages: string[];
 }) {
   const ticketRef = useRef<any>(null);
+  const bruhRef = useRef<any>(null);
   useEffect(() => {
     function animateOnMouseOver(e: any) {
       const deg = {
@@ -52,9 +53,12 @@ export default function Success({
       const z = event.accelerationIncludingGravity.z;
 
       const deg = {
-        x: 30 * ((x / 360) * 2 - 1),
-        y: 30 * ((z / 360) * 2 - 1),
+        x: 30 * ((x / 5) * 2 - 1),
+        y: 30 * ((y / 5) * 2 - 1),
       };
+      if (bruhRef) {
+        bruhRef.current.innerHTML = JSON.stringify({ x, y, z });
+      }
       if (ticketRef.current) {
         ticketRef.current.style.transform = `rotateX(${
           deg.y
@@ -134,6 +138,7 @@ export default function Success({
           <button className="bg-transparent flex text-lg items-center backdrop-blur-lg py-2 px-4 rounded-xl bg-zinc-600 bg-opacity-30 hover:bg-opacity-50">
             <IconCopy stroke={1.2} /> Copy URL
           </button>
+          <div ref={bruhRef}></div>
         </div>
         <Container>
           <div className="text-center mt-20">
