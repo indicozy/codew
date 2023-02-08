@@ -37,6 +37,7 @@ const MultiSelect: FC<{
   return (
     <div className="my-2">
       <label className="block">{name}*:</label>
+      <div className="text-xs text-gray-400">Select multiple</div>
       <Listbox
         multiple
         value={selected}
