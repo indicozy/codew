@@ -1,10 +1,10 @@
-import type { NextApiHandler } from 'next'
-import { z } from 'zod'
-import { prisma } from '../../server/db/client';
-import { Errors } from '../../server/errors';
-import { sendError } from '../../server/utils/sendError';
-import { parseMultipart } from '../../server/utils/parseMultipart';
-import { uploadFiles } from '../../server/utils/uploadFiles';
+import type { NextApiHandler } from "next";
+import { z } from "zod";
+import { prisma } from "../../server/db/client";
+import { Errors } from "../../server/errors";
+import { sendError } from "../../server/utils/sendError";
+import { parseMultipart } from "../../server/utils/parseMultipart";
+import { uploadFiles } from "../../server/utils/uploadFiles";
 
 const incomingDataSchema = z.object({
   firstName: z.string(),
@@ -21,21 +21,25 @@ const incomingDataSchema = z.object({
 });
 
 const fileFields = {
-  stateId: 'application/pdf',
-  enrollmentVerification: 'application/pdf',
-  cv: 'application/pdf',
-}
+  stateId: "application/pdf",
+  enrollmentVerification: "application/pdf",
+  cv: "application/pdf",
+};
 
-export type Response = {
-  success: false;
-  error: string;
-  code: Errors;
-} | {
-  success: true;
-}
+export type Response =
+  | {
+      success: false;
+      error: string;
+      code: Errors;
+    }
+  | {
+      success: true;
+    };
 
 const handler: NextApiHandler = async (req, res) => {
-  const data = await parseMultipart(req, fileFields, incomingDataSchema).catch(() => null);
+  const data = await parseMultipart(req, fileFields, incomingDataSchema).catch(
+    () => null
+  );
 
   if (!data) {
     return sendError(res, Errors.FORM_ERROR);
@@ -55,18 +59,18 @@ const handler: NextApiHandler = async (req, res) => {
     data: {
       ...data.fields,
       ...files,
-    }
+    },
   });
 
   return res.status(200).json({
     success: true,
   });
-}
+};
 
 export const config = {
   api: {
     bodyParser: false,
   },
-}
+};
 
 export default handler;
