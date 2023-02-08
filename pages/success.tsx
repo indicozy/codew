@@ -39,25 +39,34 @@ export default function Success({
       const deg = {
         x: 30 * ((e.clientX / window.innerWidth) * 2 - 1),
         y: 30 * ((e.clientY / window.innerHeight) * 2 - 1),
-        // if the mouse is inside the textWrapper, this object will have values from -15 to 15
-        // try 45
       };
-      // console.log(deg);
-
       if (ticketRef.current) {
         ticketRef.current.style.transform = `rotateX(${
           deg.y
         }deg)  rotateY(${-deg.x}deg)`;
       }
-
-      //   screenLog.innerText = `
-      //     X= ${deg.x}
-      //     Y= ${deg.y}
-      //     `;
     }
-    window.addEventListener("mousemove", (e) => animateOnMouseOver(e));
+    function handleMotionEvent(event: any) {
+      const x = event.accelerationIncludingGravity.x;
+      const y = event.accelerationIncludingGravity.y;
+      const z = event.accelerationIncludingGravity.z;
+
+      const deg = {
+        x: 30 * ((event.clientX / window.innerWidth) * 2 - 1),
+        y: 30 * ((event.clientY / window.innerHeight) * 2 - 1),
+      };
+      if (ticketRef.current) {
+        ticketRef.current.style.transform = `rotateX(${
+          deg.y
+        }deg)  rotateY(${-deg.x}deg)`;
+      }
+      // Do something awesome.
+    }
+    window.addEventListener("devicemotion", handleMotionEvent, true);
+    window.addEventListener("mousemove", animateOnMouseOver);
     return () => {
-      window.removeEventListener("mousemove", (e) => animateOnMouseOver(e));
+      window.removeEventListener("mousemove", animateOnMouseOver);
+      window.removeEventListener("devicemotion", handleMotionEvent);
     };
   }, [ticketRef]);
   function padWithLeadingZeros(num: number | string, totalLength: number) {
@@ -66,7 +75,7 @@ export default function Success({
   return (
     <>
       <div
-        className={`absolute top-[calc(50%-16rem)] sm:top-[calc(50%-18rem)] left-[calc(50%-8rem)] sm:left-[calc(50%-18rem)] w-[18rem] sm:w-[36rem] z-[-1]`}
+        className={`absolute top-[calc(50%-14rem)] sm:top-[calc(50%-18rem)] left-[calc(50%-8rem)] sm:left-[calc(50%-18rem)] w-[18rem] sm:w-[36rem] z-[-1]`}
       >
         <div className="relative">
           <div
