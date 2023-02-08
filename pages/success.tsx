@@ -138,8 +138,8 @@ export default function Success({
           <button className="bg-transparent flex text-lg items-center backdrop-blur-lg py-2 px-4 rounded-xl bg-zinc-600 bg-opacity-30 hover:bg-opacity-50">
             <IconCopy stroke={1.2} /> Copy URL
           </button>
-          <div ref={bruhRef}></div>
         </div>
+        <div className="w-40" ref={bruhRef}></div>
         <Container>
           <div className="text-center mt-20">
             <div className="text-2xl font-semibold">
