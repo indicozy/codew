@@ -21,9 +21,9 @@ import DateField from "../ui/form/Datepicker";
 //   cityOfResidence: z.string(),
 //   schoolName: z.string(),
 //   pursuingDegree: z.string(),
-//   currentYear: z.string(),
+//   currentYear: z.string(), // TODO it isn't there
 //   programmingLanguages: z.string(),
-//   motivationLetter: z.string(),
+//   motivationLetter: z.string(), // TODO now
 // });
 
 // const fileFields = {
@@ -41,24 +41,31 @@ export function Registration() {
     getValues,
   } = useForm();
   const router = useRouter();
-  const { mutate } = useMutation(
+  const { mutate, isLoading } = useMutation(
     async (values) => {
-      console.log(values);
-      // await axios.post("/path/to/api", values, {
-      //   headers: {
-      //     "Content-Type": "multipart/form-data",
-      //   },
-      // });
-    }
-    // { onSuccess: () => router.push("/success") }
+      console.warn("MUTATE", values);
+      const response = await axios.post("/api/register", values, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      console.warn("RESPONSE", response);
+    },
+    { onSuccess: () => router.push("/success") }
   );
 
+  const onSubmit = (values) => {
+    values.cv = values.cv[0];
+    values.stateId = values.stateId[0];
+    values.enrollmentVerification = values.enrollmentVerification[0];
+    mutate(values);
+  };
   return (
     <ComponentAnchor id="registration">
       <Container>
         {JSON.stringify(getValues())}
         <form
-          onSubmit={(e) => handleSubmit(() => mutate())(e)}
+          onSubmit={(e) => handleSubmit(onSubmit)(e)}
           encType="multipart/form-data"
           method="POST"
           className="w-full"
@@ -147,7 +154,7 @@ export function Registration() {
               register={register}
               errors={errors}
               name="Email address"
-              slug="emailAddress"
+              slug="email"
               validation={{ required: true }}
             />
             <Dropdown
@@ -176,12 +183,16 @@ export function Registration() {
               register={register}
               errors={errors}
               name="CV"
-              slug="fileInput"
+              slug="cv"
               validation={{ required: true }}
             />
           </div>
 
-          <button type="submit" className="p-4 bg-red-400">
+          <button
+            disabled={isLoading}
+            type="submit"
+            className={`p-4 ${isLoading ? "bg-gray-800" : "bg-red-400"}`}
+          >
             Submit
           </button>
         </form>

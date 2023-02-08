@@ -40,13 +40,13 @@ const DateField: FC<{
   }
   return (
     <div>
-      <div>{JSON.stringify(value)}</div>
+      {/* <div>{JSON.stringify(value)}</div> */}
       <label className="block">{name}: </label>
-      {JSON.stringify(valueDate)}
+      {/* {JSON.stringify(valueDate)} */}
       <DatePicker
         selected={valueDate}
         locale={ru}
-        dateFormat="dd MMMM yyyy"
+        dateFormat="dd/MM/yyyy"
         // format="dd/MM/yyyy"
         onChange={(date: Date | null) => {
           console.log(date);
