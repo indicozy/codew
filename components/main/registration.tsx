@@ -86,7 +86,7 @@ export function Registration() {
               setValue={setValue}
               register={register}
               variants={CountriesList}
-              selected={getValues("citizenship")}
+              value={getValues("dateOfBirth")}
               validation={{ required: true }}
             />
             <Dropdown
