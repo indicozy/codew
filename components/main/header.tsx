@@ -3,6 +3,7 @@ import { useLanguageQuery, useTranslation } from "next-export-i18n";
 import Link from "next/link";
 import { LocaleSwitch } from "../locale-switch";
 import Navbar from "../navbar/navbar";
+import LinkHover from "../ui/linkHover";
 export const links = [
   "welcome",
   "about",
@@ -15,7 +16,7 @@ export const links = [
 ];
 const Element = ({ link }: { link: string }) => {
   const { t } = useTranslation();
-  return <a href={`#${link}`}>{t(`header.${link}`)}</a>;
+  return <LinkHover href={`#${link}`}>{t(`header.${link}`)}</LinkHover>;
 };
 
 const Links = () => {

@@ -210,7 +210,9 @@ export function Registration() {
               disabled={isLoading}
               type="submit"
               className={`px-6 py-2 text-2xl sm:text-2xl ${
-                isLoading ? "bg-gray-800" : "bg-default hover:bg-rose-600"
+                isLoading
+                  ? "bg-gray-800"
+                  : "bg-default hover:bg-rose-600 transition-all duration-150"
               } rounded-full`}
             >
               Submit

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Socials } from "../../data/info";
 import Container from "../ui/container";
+import LinkHover from "../ui/linkHover";
 
 export function Footer() {
   return (
@@ -47,18 +48,29 @@ export function Footer() {
           />
         </div>
         <div className="flex items-center space-x-8 mx-auto flex-nowrap justify-center mt-8 text-rose-300">
-          <a href={Socials.instagram}>Instagram</a>
-          <a href={Socials.telegram}>Telegram</a>
-          <a href={Socials.youtube}>YouTube</a>
+          <LinkHover isThin customColor="rose" href={Socials.instagram}>
+            Instagram
+          </LinkHover>
+          <LinkHover isThin customColor="rose" href={Socials.telegram}>
+            Telegram
+          </LinkHover>
+          <LinkHover isThin customColor="rose" href={Socials.youtube}>
+            YouTube
+          </LinkHover>
         </div>
         <div className="text-center text-sm text-gray-600 mt-8 italic">
           © 2023 NU ACM-W SC All rights reserved.
         </div>
         <div className="text-center text-xs text-gray-400 mt-8">
           Made with ❤️ by{" "}
-          <a className="text-rose-300" href="https://github.com/indicozy">
+          <LinkHover
+            isThin
+            customColor="rose"
+            className="text-rose-300"
+            href="https://github.com/indicozy"
+          >
             indicozy
-          </a>
+          </LinkHover>
           , aruryss & Adam Cosman
         </div>
       </Container>

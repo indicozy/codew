@@ -12,6 +12,7 @@ import { ComponentAnchor } from "../componentAnchor";
 import Image from "next/image";
 import Container from "../ui/container";
 import { Socials } from "../../data/info";
+import LinkHover from "../ui/linkHover";
 
 type Badge = { icon: TablerIcon; name: string; href: string };
 
@@ -40,13 +41,15 @@ export function Team() {
               <div>{t("team.description")}</div>
               <div className="flex mt-4 space-x-10">
                 {badges.map((badge, i) => (
-                  <a
+                  <LinkHover
+                    isThin
+                    customColor="rose"
                     href={badge.href}
                     key={i}
                     className="text-base text-rose-300"
                   >
                     {badge.name}
-                  </a>
+                  </LinkHover>
                 ))}
               </div>
             </div>

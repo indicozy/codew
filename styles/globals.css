@@ -6,6 +6,35 @@
   @apply bg-[#544761] text-[#DAD9D9] w-96 py-1 rounded-full px-2 font-mont;
 }
 
+.link-underline {
+  border-bottom-width: 0;
+  background-image: linear-gradient(transparent, transparent),
+    linear-gradient(#fff, #fff);
+  background-size: 0 2px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s ease-in-out;
+}
+
+.link-underline-thin {
+  background-size: 0 1px;
+}
+
+.link-underline-rose {
+  background-image: linear-gradient(transparent, transparent),
+    linear-gradient(rgb(253, 164, 175), rgb(253, 164, 175));
+}
+
+.link-underline:hover {
+  background-size: 100% 2px;
+  background-position: 0 100%;
+}
+
+.link-underline-thin:hover {
+  background-size: 100% 1px;
+  background-position: 0 100%;
+}
+
 .react-datepicker-popper {
 }
 div.react-datepicker,
