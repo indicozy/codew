@@ -10,7 +10,7 @@ const TextField: FC<{
 }> = ({ errors, register, name, slug, validation, errorText }) => {
   return (
     <div>
-      <label className="block">{name}: </label>
+      <label className="block">{name}*: </label>
       <input
         className="bg-[#544761] text-[#DAD9D9] rounded-full px-2 py-1 font-mont block w-96"
         type="text"

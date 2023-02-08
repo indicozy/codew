@@ -11,6 +11,9 @@ import { CountriesList } from "../../data/countries";
 import FileField from "../ui/form/FileField";
 import Container from "../ui/container";
 import DateField from "../ui/form/Datepicker";
+import MultiSelect from "../ui/form/MultiSelect";
+import languages from "../../data/languages";
+import TextAreaField from "../ui/form/TextAreaField";
 
 // const incomingDataSchema = z.object({
 //   firstName: z.string(),
@@ -143,7 +146,7 @@ export function Registration() {
               validation={{ required: true }}
             />
             <TextField
-              errorText="teext should be like 2018"
+              errorText="format must be like 2018"
               register={register}
               errors={errors}
               name="Graduation Year"
@@ -168,15 +171,15 @@ export function Registration() {
               selected={getValues("contestLanguage")}
               validation={{ required: true }}
             />
-            <Dropdown
+            <MultiSelect
               errors={errors}
-              defaultText="Select Language"
-              name="Programming Language"
-              slug="programmingLanguage"
+              defaultText="Select Languages"
+              name="Programming Languages"
+              slug="programmingLanguages"
               setValue={setValue}
               register={register}
-              variants={["C++", "Python", "Javascript"]}
-              selected={getValues("programmingLanguage")}
+              variants={languages}
+              selected={getValues("programmingLanguages")}
               validation={{ required: true }}
             />
             <FileField
@@ -187,14 +190,32 @@ export function Registration() {
               validation={{ required: true }}
             />
           </div>
+          <div className="mt-12">
+            <TextAreaField
+              register={register}
+              errors={errors}
+              name="What motivates you to participate in codeW?"
+              slug="motivationLetter"
+              errorText="Minimum 100 words."
+              validation={{
+                required: true,
+                validate: (value: string | undefined) =>
+                  value && value.split(" ").length > 100,
+              }}
+            />
+          </div>
 
-          <button
-            disabled={isLoading}
-            type="submit"
-            className={`p-4 ${isLoading ? "bg-gray-800" : "bg-red-400"}`}
-          >
-            Submit
-          </button>
+          <div className="flex justify-center">
+            <button
+              disabled={isLoading}
+              type="submit"
+              className={`px-6 py-2 text-2xl sm:text-2xl ${
+                isLoading ? "bg-gray-800" : "bg-default hover:bg-rose-600"
+              } rounded-full`}
+            >
+              Submit
+            </button>
+          </div>
         </form>
       </Container>
     </ComponentAnchor>

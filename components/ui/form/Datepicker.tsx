@@ -41,7 +41,7 @@ const DateField: FC<{
   return (
     <div>
       {/* <div>{JSON.stringify(value)}</div> */}
-      <label className="block">{name}: </label>
+      <label className="block">{name}*:</label>
       {/* {JSON.stringify(valueDate)} */}
       <DatePicker
         selected={valueDate}

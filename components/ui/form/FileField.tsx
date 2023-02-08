@@ -10,7 +10,7 @@ const FileField: FC<{
 }> = ({ errors, register, name, slug, validation, errorText }) => {
   return (
     <div className="w-96 my-2">
-      <label className="block">{name}: </label>
+      <label className="block">{name}*: </label>
       <label className="block">
         <span className="sr-only">Choose File</span>
         <input
