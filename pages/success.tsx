@@ -52,8 +52,8 @@ export default function Success({
       const z = event.accelerationIncludingGravity.z;
 
       const deg = {
-        x: 30 * ((event.clientX / window.innerWidth) * 2 - 1),
-        y: 30 * ((event.clientY / window.innerHeight) * 2 - 1),
+        x: 30 * (x * 2 - 1),
+        y: 30 * (y * 2 - 1),
       };
       if (ticketRef.current) {
         ticketRef.current.style.transform = `rotateX(${
