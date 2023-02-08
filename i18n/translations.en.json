@@ -1,5 +1,13 @@
 {
   "locale": "en",
+  "success": {
+    "headline": "Registration was successful!",
+    "description": "Your application was received. We will contact you for the next steps by email. Look out!",
+    "share": "Share URL",
+    "copy": "Copy URL",
+    "hosted": "Hosted by ACM-W",
+    "date": "10:30am, October 25, 2002"
+  },
   "register": "Register",
   "header": {
     "welcome": "Welcome",

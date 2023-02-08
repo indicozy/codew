@@ -1,5 +1,13 @@
 {
   "locale": "ru",
+  "success": {
+    "headline": "ийгуфвыиши",
+    "description": "Your application was received. We will contact you for the next steps by email. Look out!",
+    "share": "Share URL",
+    "copy": "Copy URL",
+    "hosted": "Hosted by ACM-W",
+    "date": "10:30am, October 25, 2002"
+  },
   "header": {
     "welcome": "Главная",
     "about": "О codeW",
@@ -30,7 +38,7 @@
     ]
   },
   "schedule": {
-    "headline": "codeW 2023 Schedule",
+    "headline": "Расписснснфивфыв",
     "items": [
       {
         "time": "10:00-11:00",

@@ -1,5 +1,6 @@
 import { IconCopy, IconShare } from "@tabler/icons";
 import { GetServerSideProps } from "next";
+import { useTranslation } from "next-export-i18n";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import Container from "../components/ui/container";
@@ -34,14 +35,16 @@ export default function Success({
   languages: string[];
 }) {
   const ticketRef = useRef<any>(null);
+  const { t } = useTranslation();
   // const bruhRef = useRef<any>(null);
   useEffect(() => {
+    let isMobile = false;
     function animateOnMouseOver(e: any) {
       const deg = {
         x: 30 * ((e.clientX / window.innerWidth) * 2 - 1),
         y: 30 * ((e.clientY / window.innerHeight) * 2 - 1),
       };
-      if (ticketRef.current) {
+      if (ticketRef.current && !isMobile) {
         ticketRef.current.style.transform = `rotateX(${
           deg.y
         }deg)  rotateY(${-deg.x}deg)`;
@@ -51,6 +54,7 @@ export default function Success({
       const x = event.accelerationIncludingGravity.x;
       const y = event.accelerationIncludingGravity.y;
       const z = event.accelerationIncludingGravity.z;
+      isMobile = !!x;
 
       const deg = {
         x: 30 * ((x / 5) * 2 - 1),
@@ -118,8 +122,8 @@ export default function Success({
                   className="w-12"
                 />
                 <div className="text-sm">
-                  <div>10:30am, October 25, 2002</div>
-                  <div>Hosted by ACM-W</div>
+                  <div>{t("success.date")}</div>
+                  <div>{t("success.hosted")}</div>
                 </div>
               </div>
             </div>
@@ -132,23 +136,22 @@ export default function Success({
         </div>
         <div className="flex space-x-8 justify-center mt-8">
           <button className="bg-transparent flex text-lg items-center backdrop-blur-lg py-2 px-4 rounded-xl bg-zinc-600 bg-opacity-30 hover:bg-opacity-50">
-            <IconShare stroke={1.2} /> <span className="w-2"></span> Share URL
+            <IconShare stroke={1.2} /> <span className="w-2"></span>
+            {t("success.share")}
           </button>
 
           <button className="bg-transparent flex text-lg items-center backdrop-blur-lg py-2 px-4 rounded-xl bg-zinc-600 bg-opacity-30 hover:bg-opacity-50">
-            <IconCopy stroke={1.2} /> Copy URL
+            <IconCopy stroke={1.2} />
+            {t("success.copy")}
           </button>
         </div>
         {/* <div className="w-40" ref={bruhRef}></div> */}
         <Container>
           <div className="text-center mt-20">
             <div className="text-2xl font-semibold">
-              Registration was successful!
+              {t("success.headline")}
             </div>
-            <div className="text-xl">
-              Your application was received. We will contact you for the next
-              steps by email. Look out!
-            </div>
+            <div className="text-xl">{t("success.description")}</div>
           </div>
         </Container>
       </div>

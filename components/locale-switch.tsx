@@ -13,7 +13,7 @@ const Locales = ({ localeNow }: { localeNow: string }) => {
     router.push(
       {
         pathname: router.pathname,
-        query: { lang: value },
+        query: { ...router.query, lang: value },
       },
       undefined,
       { shallow: false }
