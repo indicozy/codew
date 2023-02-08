@@ -54,7 +54,7 @@ export default function Success({
 
       const deg = {
         x: 30 * ((x / 5) * 2 - 1),
-        y: 30 * ((y / 5) * 2 - 1),
+        y: 30 * ((((y - 7) % 10) / 5) * 2 - 1),
       };
       if (bruhRef) {
         bruhRef.current.innerHTML = JSON.stringify({ x, y, z });
