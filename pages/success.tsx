@@ -189,6 +189,7 @@ const Page: NextPage<TicketProps> = ({ response }) => {
               onClick={() => {
                 navigator.share({
                   title: "Я в CodeW!",
+                  text: "megatext", // todo change
                   url: `https://codew.kz/success?id=${response.id}`,
                 });
               }}

@@ -25,9 +25,9 @@ import { useTranslation } from "next-export-i18n";
 //   cityOfResidence: z.string(),
 //   schoolName: z.string(),
 //   pursuingDegree: z.string(),
-//   currentYear: z.string(), // TODO it isn't there
+//   currentYear: z.string(),
 //   programmingLanguages: z.string(),
-//   motivationLetter: z.string(), // TODO now
+//   motivationLetter: z.string(),
 // });
 
 // const fileFields = {
