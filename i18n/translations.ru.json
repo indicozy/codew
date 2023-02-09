@@ -106,11 +106,55 @@
     ]
   },
   "sponsors": {
-    "headline": "Наши Спонсоры",
-    "umag": "Description of umag",
-    "epam": "Description of epam",
-    "tassay": "Description of epam",
-    "zapis": "Description of epam"
+    "headline": "Our Sponsors",
+    "umag": {
+      "links": [
+        {
+          "href": "#",
+          "text": "Link"
+        },
+        {
+          "href": "#",
+          "text": "Link"
+        }
+      ]
+    },
+    "epam": {
+      "links": [
+        {
+          "href": "#",
+          "text": "Link"
+        },
+        {
+          "href": "#",
+          "text": "Link"
+        }
+      ]
+    },
+    "tassay": {
+      "links": [
+        {
+          "href": "#",
+          "text": "Link"
+        },
+        {
+          "href": "#",
+          "text": "Link"
+        }
+      ]
+    },
+    "zapis": {
+      "links": [
+        {
+          "href": "#",
+          "text": "Link"
+        },
+        {
+          "href": "#",
+          "text": "Link"
+        }
+      ]
+    }
   },
   "team": {
     "headline": "Наша Команда",
