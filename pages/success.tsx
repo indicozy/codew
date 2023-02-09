@@ -96,16 +96,17 @@ const Page: NextPage<TicketProps> = ({ response }) => {
         x: 30 * ((x / 10) * 2 - 1),
         y: 30 * ((((y - 7) % 10) / 10) * 2 - 1),
       };
-      frames += 1;
-      framesTotal.x += deg.x;
-      framesTotal.y += deg.y;
-      if (frames >= 3) {
-        frames = 0;
-        framesTotal.x /= 3;
-        framesTotal.y /= 3;
-        animate(framesTotal);
-        framesTotal = { x: 0, y: 0 };
-      }
+      animate(deg);
+      // frames += 1;
+      // framesTotal.x += deg.x;
+      // framesTotal.y += deg.y;
+      // if (frames >= 3) {
+      //   frames = 0;
+      //   framesTotal.x /= 3;
+      //   framesTotal.y /= 3;
+      //   animate(framesTotal);
+      //   framesTotal = { x: 0, y: 0 };
+      // }
     }
     window.addEventListener("devicemotion", handleMotionEvent, true);
     window.addEventListener("mousemove", animateOnMouseOver);
