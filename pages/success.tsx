@@ -123,7 +123,7 @@ const Page: NextPage<TicketProps> = ({ response }) => {
     <>
       <div className={`absolute z-[-1]`}>
         <div className="w-screen overflow-x-hidden h-screen -mt-20">
-          <div className="relative " ref={imageRef}>
+          <div className="relative transition-all duration-100" ref={imageRef}>
             <div
               className={`absolute top-[calc(50%+8rem)] left-[calc(50%-10rem)] sm:left-[calc(50%-16rem)] blur-[120px] -z-1 w-[20rem] h-[20rem] sm:w-[32rem] sm:h-[32rem] bg-[#DDF9F1] bg-opacity-60 rounded-full`}
             ></div>
@@ -145,7 +145,7 @@ const Page: NextPage<TicketProps> = ({ response }) => {
       <div className="absolute w-screen h-[calc(100vh-5rem)] flex flex-col items-center justify-center">
         <div className="scale-[.6] sm:scale-100">
           <div
-            className=" w-[40rem] h-[20rem] border border-zinc-600 rounded-[60px] flex backdrop-blur-lg bg-bg bg-opacity-20"
+            className=" w-[40rem] h-[20rem] border border-zinc-600 rounded-[60px] flex backdrop-blur-lg bg-bg bg-opacity-20 transition-all duration-100"
             ref={ticketRef}
           >
             <div className="w-[30rem] p-10 flex flex-col justify-between">
