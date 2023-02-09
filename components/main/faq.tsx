@@ -18,7 +18,6 @@ export function Faq() {
   );
   return (
     <>
-      <BackgroundImage image={"/assets/99.png"} position="left" />
       <ComponentAnchor id="faq">
         <Container>
           <Headline>{t("faq.headline")}</Headline>
