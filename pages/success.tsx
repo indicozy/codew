@@ -97,12 +97,12 @@ const Page: NextPage<TicketProps> = ({ response }) => {
       if (!isMobile) return;
 
       const deg = {
-        x: 30 * ((x / 10) * 2 - 1),
+        x: 30 * ((((x + 7) % 10) / 10) * 2 - 1),
         y: 30 * ((((y - 7) % 10) / 10) * 2 - 1),
       };
       // animate(deg);
       frames += 1;
-      const shutterSpeed = 30;
+      const shutterSpeed = 18;
       const stiffness = 2;
       if (frames >= shutterSpeed) {
         deg.x /= stiffness;
