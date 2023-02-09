@@ -1,39 +1,60 @@
 import { IconCopy, IconShare } from "@tabler/icons";
-import { GetServerSideProps } from "next";
+import { GetServerSideProps, NextPage } from "next";
 import { useTranslation } from "next-export-i18n";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import Container from "../components/ui/container";
+import { prisma } from "../server/db/client";
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { ticketId } = context.query;
-  if (!ticketId)
-    return {
-      redirect: {
-        destination: "/",
-        permanent: false,
-      },
-    };
-  const sampleUser = {
-    firstName: "burkit",
-    lastName: "bruh",
-    languages: ["C++", "Python", "JS"],
+interface TicketProps {
+  response: {
+    id: number;
+    firstName: string;
+    lastName: string;
+    email: string;
+    programmingLanguages: string;
   };
+}
+
+export const getServerSideProps: GetServerSideProps<TicketProps> = async (
+  context
+) => {
+  const id = context.query.id as string | undefined;
+
+  if (!id) {
+    return {
+      notFound: true,
+    };
+  }
+  // console.log(await prisma.response.findMany({}));
+
+  const response = await prisma.response.findUnique({
+    select: {
+      id: true,
+      firstName: true,
+      lastName: true,
+      email: true,
+      programmingLanguages: true,
+    },
+    where: {
+      id: Number(id),
+    },
+  });
+
+  if (!response) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
-    props: { ...sampleUser, ticketId },
+    props: {
+      response,
+    },
   };
 };
-export default function Success({
-  ticketId,
-  firstName,
-  lastName,
-  languages,
-}: {
-  ticketId: string;
-  firstName: string;
-  lastName: string;
-  languages: string[];
-}) {
+
+const Page: NextPage<TicketProps> = ({ response }) => {
   const ticketRef = useRef<any>(null);
   const { t } = useTranslation();
   // const bruhRef = useRef<any>(null);
@@ -109,9 +130,9 @@ export default function Success({
             <div className="w-[30rem] p-10 flex flex-col justify-between">
               <div>
                 <div className=" text-4xl font-neue">
-                  {firstName} {lastName}
+                  {response.firstName} {response.lastName}
                 </div>
-                <div>{languages.join(", ")}</div>
+                <div>{response.programmingLanguages}</div>
               </div>
               <div className="flex flex-nowrap space-x-4 text-zinc-300 font-neue">
                 <Image
@@ -129,7 +150,7 @@ export default function Success({
             </div>
             <div className="w-[10rem] border-l border-zinc-600 flex items-center justify-center">
               <div className=" rotate-90 text-4xl tracking-wider m-0 p-0 font-neue">
-                #{padWithLeadingZeros(ticketId, 6)}
+                #{padWithLeadingZeros(response.id, 6)}
               </div>
             </div>
           </div>
@@ -157,4 +178,6 @@ export default function Success({
       </div>
     </>
   );
-}
+};
+
+export default Page;
