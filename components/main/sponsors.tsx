@@ -57,7 +57,7 @@ export function Sponsors() {
             {sponsors.map((sponsor, i) => (
               <div key={i}>
                 <Image
-                  className="w-48 sm:w-60"
+                  className="w-48 sm:w-72"
                   src={sponsor.href}
                   alt={""}
                   width={sponsor.width}
