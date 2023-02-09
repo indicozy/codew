@@ -100,10 +100,10 @@ const Page: NextPage<TicketProps> = ({ response }) => {
       frames += 1;
       framesTotal.x += deg.x;
       framesTotal.y += deg.y;
-      const shutterSpeed = 6;
+      const shutterSpeed = 18;
       if (frames >= shutterSpeed) {
-        framesTotal.x /= frames;
-        framesTotal.y /= frames;
+        framesTotal.x /= frames / 2;
+        framesTotal.y /= frames / 2;
         animate(framesTotal);
         frames = 0;
         framesTotal = { x: 0, y: 0 };
