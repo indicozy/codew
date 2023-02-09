@@ -120,21 +120,24 @@ const Page: NextPage<TicketProps> = ({ response }) => {
   }
   return (
     <>
-      <div
-        className={`absolute top-[calc(50%-14rem)] sm:top-[calc(50%-18rem)] left-[calc(50%-8rem)] sm:left-[calc(50%-18rem)] w-[18rem] sm:w-[36rem] z-[-1]`}
-      >
-        <div className="relative " ref={imageRef}>
-          <div
-            className={`absolute top-0 left-0 right-0 bottom-0 blur-[120px] -z-1 w-[20rem] h-[20rem] sm:w-[32rem] sm:h-[32rem] bg-[#DDF9F1] bg-opacity-60 rounded-full`}
-          ></div>
-          <div className={`absolute top-0 left-0 right-0 bottom-0 z-2`}>
-            <Image
-              src={"/assets/99.png"}
-              width={500}
-              height={500}
-              alt=""
-              loading="eager"
-            />
+      <div className={`absolute z-[-1]`}>
+        <div className="w-screen overflow-x-hidden h-screen -mt-20">
+          <div className="relative " ref={imageRef}>
+            <div
+              className={`absolute top-[calc(50%+8rem)] left-[calc(50%-10rem)] sm:left-[calc(50%-16rem)] blur-[120px] -z-1 w-[20rem] h-[20rem] sm:w-[32rem] sm:h-[32rem] bg-[#DDF9F1] bg-opacity-60 rounded-full`}
+            ></div>
+            <div
+              className={`absolute top-[calc(50%+8rem)] left-[calc(50%-10rem)] sm:left-[calc(50%-18rem)] z-2`}
+            >
+              <Image
+                className="w-[20rem] sm:w-[36rem]"
+                src={"/assets/99.png"}
+                width={500}
+                height={500}
+                alt=""
+                loading="eager"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -186,7 +189,7 @@ const Page: NextPage<TicketProps> = ({ response }) => {
         {/* <div className="w-40" ref={bruhRef}></div> */}
         <Container>
           <div className="text-center mt-20">
-            <div className="text-2xl font-semibold">
+            <div className="text-2xl font-bold font-mont">
               {t("success.headline")}
             </div>
             <div className="text-xl">{t("success.description")}</div>
