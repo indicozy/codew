@@ -17,6 +17,10 @@ interface TicketProps {
   };
 }
 
+function padWithLeadingZeros(num: number | string, totalLength: number) {
+  return String(num).padStart(totalLength, "0");
+}
+
 export const getServerSideProps: GetServerSideProps<TicketProps> = async (
   context
 ) => {
@@ -114,9 +118,14 @@ const Page: NextPage<TicketProps> = ({ response }) => {
       window.removeEventListener("devicemotion", handleMotionEvent);
     };
   }, [ticketRef]);
-  function padWithLeadingZeros(num: number | string, totalLength: number) {
-    return String(num).padStart(totalLength, "0");
-  }
+
+  const [hasNavigator, hasNavigatorSet] = useState(false);
+  useEffect(() => {
+    if (navigator.share) {
+      hasNavigatorSet(true);
+    }
+  }, []);
+
   return (
     <>
       <div className={`absolute z-[-1]`}>
@@ -175,7 +184,7 @@ const Page: NextPage<TicketProps> = ({ response }) => {
           </div>
         </div>
         <div className="flex space-x-8 justify-center mt-8">
-          {navigator.share ? (
+          {hasNavigator ? (
             <button
               onClick={() => {
                 navigator.share({
