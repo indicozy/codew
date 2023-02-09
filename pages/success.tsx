@@ -62,7 +62,6 @@ const Page: NextPage<TicketProps> = ({ response }) => {
   useEffect(() => {
     let isMobile = false;
     let frames = 0;
-    let framesTotal = { x: 0, y: 0 };
 
     function animate(deg: { x: number; y: number }) {
       if (ticketRef.current) {
@@ -98,15 +97,13 @@ const Page: NextPage<TicketProps> = ({ response }) => {
       };
       // animate(deg);
       frames += 1;
-      framesTotal.x += deg.x;
-      framesTotal.y += deg.y;
-      const shutterSpeed = 18;
+      const shutterSpeed = 30;
+      const stiffness = 2;
       if (frames >= shutterSpeed) {
-        framesTotal.x /= frames / 2;
-        framesTotal.y /= frames / 2;
-        animate(framesTotal);
+        deg.x /= stiffness;
+        deg.y /= stiffness;
+        animate(deg);
         frames = 0;
-        framesTotal = { x: 0, y: 0 };
       }
     }
     window.addEventListener("devicemotion", handleMotionEvent, true);
