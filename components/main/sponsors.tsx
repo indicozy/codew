@@ -1,15 +1,22 @@
+import { link } from "fs";
 import { useTranslation } from "next-export-i18n";
 import Image from "next/image";
 import { ComponentAnchor } from "../componentAnchor";
 import Container from "../ui/container";
 import { Headline } from "../ui/headline";
+import LinkHover from "../ui/linkHover";
 
 interface iSponsor {
   href: string;
   width: number;
   height: number;
-  description: string;
+  slug: string;
 }
+
+type iLink = {
+  href: string;
+  text: string;
+};
 
 export function Sponsors() {
   const { t } = useTranslation();
@@ -18,25 +25,25 @@ export function Sponsors() {
       href: "/sponsor/umag.svg",
       height: 300,
       width: 300,
-      description: t("sponsors.umag"),
+      slug: "umag",
     },
     {
       href: "/sponsor/epam.png",
       height: 300,
       width: 300,
-      description: t("sponsors.epam"),
+      slug: "epam",
     },
     {
       href: "/sponsor/zapis.svg",
       height: 300,
       width: 300,
-      description: t("sponsors.tassay"),
+      slug: "zapis",
     },
     {
       href: "/sponsor/tassay.svg",
       height: 300,
       width: 300,
-      description: t("sponsors.zapis"),
+      slug: "tassay",
     },
   ];
   return (
@@ -53,7 +60,25 @@ export function Sponsors() {
                 width={sponsor.width}
                 height={sponsor.height}
               />
-              <div className="text-xl">{sponsor.description}</div>
+              <div className="text-xl">
+                {t(`sponsors.${sponsor.slug}.body`)}
+              </div>
+
+              <div className="text-xl space-x-2">
+                {t(`sponsors.${sponsor.slug}.links`).map(
+                  (link: iLink, indexLink: number) => (
+                    <LinkHover
+                      key={indexLink}
+                      href={link.href}
+                      className="text-base text-rose-300"
+                      customColor="rose"
+                      isThin
+                    >
+                      {link.text}
+                    </LinkHover>
+                  )
+                )}
+              </div>
             </div>
           ))}
         </div>

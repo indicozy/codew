@@ -103,10 +103,58 @@
   },
   "sponsors": {
     "headline": "Our Sponsors",
-    "umag": "Description of umag",
-    "epam": "Description of epam",
-    "tassay": "Description of epam",
-    "zapis": "Description of epam"
+    "umag": {
+      "body": "Description of umag",
+      "links": [
+        {
+          "href": "#",
+          "text": "Link"
+        },
+        {
+          "href": "#",
+          "text": "Link"
+        }
+      ]
+    },
+    "epam": {
+      "body": "Description of umag",
+      "links": [
+        {
+          "href": "#",
+          "text": "Link"
+        },
+        {
+          "href": "#",
+          "text": "Link"
+        }
+      ]
+    },
+    "tassay": {
+      "body": "Description of umag",
+      "links": [
+        {
+          "href": "#",
+          "text": "Link"
+        },
+        {
+          "href": "#",
+          "text": "Link"
+        }
+      ]
+    },
+    "zapis": {
+      "body": "Description of umag",
+      "links": [
+        {
+          "href": "#",
+          "text": "Link"
+        },
+        {
+          "href": "#",
+          "text": "Link"
+        }
+      ]
+    }
   },
   "team": {
     "headline": "Our Team",
