@@ -56,40 +56,54 @@ export const getServerSideProps: GetServerSideProps<TicketProps> = async (
 
 const Page: NextPage<TicketProps> = ({ response }) => {
   const ticketRef = useRef<any>(null);
+  const imageRef = useRef<any>(null);
   const { t } = useTranslation();
   // const bruhRef = useRef<any>(null);
   useEffect(() => {
     let isMobile = false;
-    function animateOnMouseOver(e: any) {
-      const deg = {
-        x: 30 * ((e.clientX / window.innerWidth) * 2 - 1),
-        y: 30 * ((e.clientY / window.innerHeight) * 2 - 1),
-      };
+    function animate(deg: { x: number; y: number }) {
       if (ticketRef.current && !isMobile) {
         ticketRef.current.style.transform = `rotateX(${
           deg.y
         }deg)  rotateY(${-deg.x}deg)`;
       }
+      if (imageRef.current) {
+        imageRef.current.style.transform = `translateX(${
+          -deg.x * 3
+        }px)  translateY(${-deg.y * 3}px)`;
+      }
     }
+    function animateOnMouseOver(e: any) {
+      const deg = {
+        x: 30 * ((e.clientX / window.innerWidth) * 2 - 1),
+        y: 30 * ((e.clientY / window.innerHeight) * 2 - 1),
+      };
+      animate(deg);
+    }
+    let frames = 0;
+    let framesTotal = { x: 0, y: 0 };
+
     function handleMotionEvent(event: any) {
       const x = event.accelerationIncludingGravity.x;
       const y = event.accelerationIncludingGravity.y;
       const z = event.accelerationIncludingGravity.z;
       isMobile = !!x;
+      if (!!x) return;
 
       const deg = {
         x: 30 * ((x / 10) * 2 - 1),
         y: 30 * ((((y - 7) % 10) / 10) * 2 - 1),
       };
-      // if (bruhRef) {
-      //   bruhRef.current.innerHTML = JSON.stringify({ x, y, z });
-      // }
-      if (ticketRef.current) {
-        ticketRef.current.style.transform = `rotateX(${
-          deg.y
-        }deg)  rotateY(${-deg.x}deg)`;
+      frames += 1;
+      framesTotal.x += deg.x;
+      framesTotal.y += deg.y;
+      if (frames >= 3) {
+        frames = 0;
+        framesTotal.x /= 3;
+        framesTotal.y /= 3;
+        animate(framesTotal);
+        framesTotal = { x: 0, y: 0 };
       }
-      // Do something awesome.
     }
     window.addEventListener("devicemotion", handleMotionEvent, true);
     window.addEventListener("mousemove", animateOnMouseOver);
@@ -106,7 +120,7 @@ const Page: NextPage<TicketProps> = ({ response }) => {
       <div
         className={`absolute top-[calc(50%-14rem)] sm:top-[calc(50%-18rem)] left-[calc(50%-8rem)] sm:left-[calc(50%-18rem)] w-[18rem] sm:w-[36rem] z-[-1]`}
       >
-        <div className="relative">
+        <div className="relative " ref={imageRef}>
           <div
             className={`absolute top-0 left-0 right-0 bottom-0 blur-[120px] -z-1 w-[20rem] h-[20rem] sm:w-[32rem] sm:h-[32rem] bg-[#DDF9F1] bg-opacity-60 rounded-full`}
           ></div>
