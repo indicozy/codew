@@ -90,7 +90,7 @@ const Page: NextPage<TicketProps> = ({ response }) => {
       const y = event.accelerationIncludingGravity.y;
       const z = event.accelerationIncludingGravity.z;
       isMobile = !!x;
-      if (!x) return;
+      if (!isMobile) return;
 
       const deg = {
         x: 30 * ((x / 10) * 2 - 1),
