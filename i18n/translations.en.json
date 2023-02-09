@@ -1,5 +1,9 @@
 {
   "locale": "en",
+  "share": {
+    "title": "I'm in CodeW!",
+    "text": "get there too"
+  },
   "success": {
     "headline": "Registration was successful!",
     "description": "Your application was received. We will contact you for the next steps by email. Look out!",
