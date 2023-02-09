@@ -3,6 +3,7 @@ import { GetServerSideProps, NextPage } from "next";
 import { useTranslation } from "next-export-i18n";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import CopyBtn from "../components/CopyBtn";
 import Container from "../components/ui/container";
 import { prisma } from "../server/db/client";
 
@@ -174,15 +175,24 @@ const Page: NextPage<TicketProps> = ({ response }) => {
           </div>
         </div>
         <div className="flex space-x-8 justify-center mt-8">
-          <button className="bg-transparent flex text-lg items-center backdrop-blur-lg py-2 px-4 rounded-xl bg-zinc-600 bg-opacity-30 hover:bg-opacity-50">
-            <IconShare stroke={1.2} /> <span className="w-2"></span>
-            {t("success.share")}
-          </button>
+          {navigator.share ? (
+            <button
+              onClick={() => {
+                navigator.share({
+                  title: "Я в CodeW!",
+                  url: `https://codew.kz/success?id=${response.id}`,
+                });
+              }}
+              className="bg-transparent flex text-lg items-center backdrop-blur-lg py-2 px-4 rounded-xl bg-zinc-600 bg-opacity-30 hover:bg-opacity-50"
+            >
+              <IconShare stroke={1.2} /> <span className="w-2"></span>
+              {t("success.share")}
+            </button>
+          ) : (
+            <></>
+          )}
 
-          <button className="bg-transparent flex text-lg items-center backdrop-blur-lg py-2 px-4 rounded-xl bg-zinc-600 bg-opacity-30 hover:bg-opacity-50">
-            <IconCopy stroke={1.2} />
-            {t("success.copy")}
-          </button>
+          <CopyBtn textToCopy={`https://codew.kz/success?id=${response.id}`} />
         </div>
         {/* <div className="w-40" ref={bruhRef}></div> */}
         <Container>
