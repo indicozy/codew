@@ -104,7 +104,6 @@
   "sponsors": {
     "headline": "Our Sponsors",
     "umag": {
-      "body": "Description of umag",
       "links": [
         {
           "href": "#",
@@ -117,7 +116,6 @@
       ]
     },
     "epam": {
-      "body": "Description of umag",
       "links": [
         {
           "href": "#",
@@ -130,7 +128,6 @@
       ]
     },
     "tassay": {
-      "body": "Description of umag",
       "links": [
         {
           "href": "#",
@@ -143,7 +140,6 @@
       ]
     },
     "zapis": {
-      "body": "Description of umag",
       "links": [
         {
           "href": "#",

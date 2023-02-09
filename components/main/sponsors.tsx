@@ -54,25 +54,21 @@ export function Sponsors() {
           {sponsors.map((sponsor, i) => (
             <div key={i}>
               <Image
-                className="w-40"
+                className="w-48 sm:w-60"
                 src={sponsor.href}
                 alt={""}
                 width={sponsor.width}
                 height={sponsor.height}
               />
-              <div className="text-xl">
-                {t(`sponsors.${sponsor.slug}.body`)}
-              </div>
-
               <div className="text-xl space-x-2">
                 {t(`sponsors.${sponsor.slug}.links`).map(
                   (link: iLink, indexLink: number) => (
                     <LinkHover
                       key={indexLink}
                       href={link.href}
-                      className="text-base text-rose-300"
+                      className="text-lg text-rose-300"
                       customColor="rose"
-                      isThin
+                      // isThin
                     >
                       {link.text}
                     </LinkHover>
