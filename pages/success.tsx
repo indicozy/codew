@@ -61,8 +61,11 @@ const Page: NextPage<TicketProps> = ({ response }) => {
   // const bruhRef = useRef<any>(null);
   useEffect(() => {
     let isMobile = false;
+    let frames = 0;
+    let framesTotal = { x: 0, y: 0 };
+
     function animate(deg: { x: number; y: number }) {
-      if (ticketRef.current && !isMobile) {
+      if (ticketRef.current) {
         ticketRef.current.style.transform = `rotateX(${
           deg.y
         }deg)  rotateY(${-deg.x}deg)`;
@@ -74,14 +77,13 @@ const Page: NextPage<TicketProps> = ({ response }) => {
       }
     }
     function animateOnMouseOver(e: any) {
+      if (isMobile) return;
       const deg = {
         x: 30 * ((e.clientX / window.innerWidth) * 2 - 1),
         y: 30 * ((e.clientY / window.innerHeight) * 2 - 1),
       };
       animate(deg);
     }
-    let frames = 0;
-    let framesTotal = { x: 0, y: 0 };
 
     function handleMotionEvent(event: any) {
       const x = event.accelerationIncludingGravity.x;
