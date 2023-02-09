@@ -121,7 +121,7 @@ const Page: NextPage<TicketProps> = ({ response }) => {
 
   const [hasNavigator, hasNavigatorSet] = useState(false);
   useEffect(() => {
-    if (navigator.share) {
+    if (!!navigator.share) {
       hasNavigatorSet(true);
     }
   }, []);
