@@ -192,7 +192,7 @@ const Page: NextPage<TicketProps> = ({ response }) => {
             <></>
           ) : (
             <button
-              className="border border-default p-2 rounded-lg"
+              className="border border-default py-2 px-4 text-sm rounded-full"
               onClick={() => {
                 try {
                   // @ts-ignore
