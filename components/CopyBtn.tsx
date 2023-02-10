@@ -1,6 +1,6 @@
 // remove tailwind css classes if you don't want to use them.
 
-import { IconCopy } from "@tabler/icons";
+import { IconCheck, IconCopy } from "@tabler/icons";
 import { useTranslation } from "next-export-i18n";
 import React, { useState } from "react";
 
@@ -32,9 +32,17 @@ export default function CopyBtn({ textToCopy = "Copy default" }) {
       onClick={copyToClipboard}
       className={`border border-zinc-400 bg-transparent flex text-lg items-center backdrop-blur-lg py-2 px-4 rounded-xl bg-zinc-600 bg-opacity-30 hover:bg-opacity-50`}
     >
-      <IconCopy stroke={1.2} />
-
-      {copied ? "Copied" : t("success.copy")}
+      {copied ? (
+        <>
+          <IconCopy stroke={1.2} />
+          {t("success.copied")}
+        </>
+      ) : (
+        <>
+          <IconCheck stroke={1.2} />
+          {t("success.copy")}
+        </>
+      )}
     </button>
   );
 }
