@@ -62,6 +62,7 @@ export const getServerSideProps: GetServerSideProps<TicketProps> = async (
 const Page: NextPage<TicketProps> = ({ response }) => {
   const ticketRef = useRef<any>(null);
   const imageRef = useRef<any>(null);
+  const testRef = useRef<any>(null);
   const { t } = useTranslation();
   // const bruhRef = useRef<any>(null);
   useEffect(() => {
@@ -96,6 +97,10 @@ const Page: NextPage<TicketProps> = ({ response }) => {
       isMobile = !!leftToRight_degrees;
       if (!isMobile) return;
 
+      testRef.current.innerHTML = JSON.stringify({
+        beta: event.beta,
+        gamma: event.gamma,
+      });
       const deg = {
         x: 30 * ((leftToRight_degrees / 10) * 2 - 1),
         y: 30 * (((frontToBack_degrees - 7) / 10) * 2 - 1),
@@ -193,6 +198,9 @@ const Page: NextPage<TicketProps> = ({ response }) => {
               </div>
             </div>
           </div>
+        </div>
+        <div>
+          <div ref={testRef}></div>
         </div>
         <div className="flex space-x-8 justify-center mt-8">
           {hasNavigator ? (
