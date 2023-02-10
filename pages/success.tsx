@@ -101,9 +101,10 @@ const Page: NextPage<TicketProps> = ({ response }) => {
         beta: event.beta,
         gamma: event.gamma,
       });
+
       const deg = {
-        x: 30 * ((leftToRight_degrees / 10) * 2 - 1),
-        y: 30 * (((frontToBack_degrees - 7) / 10) * 2 - 1),
+        x: 30 * ((leftToRight_degrees / 100) * 2 - 1),
+        y: 30 * (((frontToBack_degrees - 7) / 100) * 2 - 1),
       };
       // animate(deg);
       frames += 1;
