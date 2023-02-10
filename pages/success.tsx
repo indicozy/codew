@@ -110,8 +110,8 @@ const Page: NextPage<TicketProps> = ({ response }) => {
       if (!isMobile) return;
 
       const deg = {
-        x: 30 * (((x - 7) / 10) * 2 - 1),
-        y: 30 * ((y / 10) * 2 - 1),
+        x: 30 * ((x / 10) * 2 - 1),
+        y: 30 * (((y - 7) / 10) * 2 - 1),
       };
       // animate(deg);
       frames += 1;
@@ -207,7 +207,7 @@ const Page: NextPage<TicketProps> = ({ response }) => {
                   url: `https://codew.kz/success?id=${response.id}`,
                 });
               }}
-              className="bg-transparent flex text-lg items-center backdrop-blur-lg py-2 px-4 rounded-xl bg-zinc-600 bg-opacity-30 hover:bg-opacity-50"
+              className="border border-zinc-600 bg-transparent flex text-lg items-center backdrop-blur-lg py-2 px-4 rounded-xl bg-zinc-600 bg-opacity-30 hover:bg-opacity-50"
             >
               <IconShare stroke={1.2} /> <span className="w-2"></span>
               {t("success.share")}
