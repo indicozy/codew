@@ -201,7 +201,7 @@ const Page: NextPage<TicketProps> = ({ response }) => {
           </div>
         </div>
         <div>
-          <div ref={testRef}></div>
+          <div ref={testRef} className="max-w-96"></div>
         </div>
         <div className="flex space-x-8 justify-center mt-8">
           {hasNavigator ? (
