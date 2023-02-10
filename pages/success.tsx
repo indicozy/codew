@@ -103,8 +103,8 @@ const Page: NextPage<TicketProps> = ({ response }) => {
       });
 
       const deg = {
-        x: 180 * (leftToRight_degrees / 180),
-        y: 180 * ((frontToBack_degrees - 45) / 180),
+        x: 270 * (leftToRight_degrees / 180),
+        y: 270 * ((frontToBack_degrees - 45) / 180),
       };
       // animate(deg);
       frames += 1;
@@ -123,18 +123,6 @@ const Page: NextPage<TicketProps> = ({ response }) => {
     // @ts-ignore
     // if (DeviceMotionEvent.requestPermission !== undefined) {
     // @ts-ignore
-    try {
-      // @ts-ignore
-      DeviceMotionEvent.requestPermission().then((response: any) => {
-        if (response == "granted") {
-          console.log("bruh");
-          // Do stuff here
-        }
-      });
-    } catch {
-      //pass
-    }
-    // }
     return () => {
       window.removeEventListener("mousemove", animateOnMouseOver);
       window.removeEventListener("deviceorientation", handleMotionEvent);
@@ -207,6 +195,27 @@ const Page: NextPage<TicketProps> = ({ response }) => {
         </div>
         <div>
           <div ref={testRef} className="w-60 overflow-hidden"></div>
+        </div>
+        <div>
+          <button
+            onClick={() => {
+              try {
+                // @ts-ignore
+                DeviceMotionEvent.requestPermission().then((response: any) => {
+                  if (response == "granted") {
+                    console.log("bruh");
+                    // Do stuff here
+                  }
+                });
+              } catch {
+                //pass
+              }
+              // }
+            }}
+          >
+            {" "}
+            grant
+          </button>
         </div>
         <div className="flex space-x-8 justify-center mt-8">
           {hasNavigator ? (
