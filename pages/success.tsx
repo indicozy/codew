@@ -107,15 +107,15 @@ const Page: NextPage<TicketProps> = ({ response }) => {
         y: 270 * ((frontToBack_degrees - 45) / 180),
       };
       // animate(deg);
-      frames += 1;
-      const shutterSpeed = 18;
+      // frames += 1;
+      // const shutterSpeed = 18;
       const stiffness = 2;
-      if (frames >= shutterSpeed) {
-        deg.x /= stiffness;
-        deg.y /= stiffness;
-        animate(deg);
-        frames = 0;
-      }
+      // if (frames >= shutterSpeed) {
+      deg.x /= stiffness;
+      deg.y /= stiffness;
+      animate(deg);
+      // frames = 0;
+      // }
     }
     window.addEventListener("mousemove", animateOnMouseOver);
     window.addEventListener("deviceorientation", handleMotionEvent, true);
