@@ -83,7 +83,7 @@ const Page: NextPage<TicketProps> = ({ response }) => {
     }
     function getAccel() {
       // @ts-ignore
-      if (DeviceMotionEvent.requestPermission) {
+      if (DeviceMotionEvent.requestPermission !== undefined) {
         // @ts-ignore
         DeviceMotionEvent.requestPermission().then((response: any) => {
           if (response == "granted") {
