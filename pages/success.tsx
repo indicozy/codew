@@ -120,6 +120,20 @@ const Page: NextPage<TicketProps> = ({ response }) => {
     window.addEventListener("mousemove", animateOnMouseOver);
     window.addEventListener("deviceorientation", handleMotionEvent, true);
 
+    setTimeout(() => {
+      try {
+        // @ts-ignore
+        DeviceMotionEvent.requestPermission().then((response: any) => {
+          if (response == "granted") {
+            console.log("bruh");
+            // Do stuff here
+          }
+        });
+      } catch {
+        //pass
+      }
+    }, 1000);
+
     // @ts-ignore
     // if (DeviceMotionEvent.requestPermission !== undefined) {
     // @ts-ignore
