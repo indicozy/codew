@@ -160,7 +160,7 @@ const Page: NextPage<TicketProps> = ({ response }) => {
         </div>
       </div>
       <div className="absolute w-screen h-[calc(100vh-5rem)] flex flex-col items-center justify-center">
-        <div className="scale-[.6] md:scale-100">
+        <div className="scale-[.45] sm:scale-[.8] md:scale-100">
           <div
             className=" w-[40rem] h-[20rem] border border-zinc-600 rounded-[60px] flex backdrop-blur-lg bg-bg bg-opacity-20 transition-all duration-75"
             ref={ticketRef}

@@ -30,7 +30,7 @@ export default function CopyBtn({ textToCopy = "Copy default" }) {
   return (
     <button
       onClick={copyToClipboard}
-      className={`border border-zinc-400 bg-transparent flex text-lg items-center backdrop-blur-lg py-2 px-4 rounded-xl bg-zinc-600 bg-opacity-30 hover:bg-opacity-50`}
+      className={`border border-zinc-400 bg-transparent flex text-base sm:text-lg items-center backdrop-blur-lg py-2 px-4 rounded-xl bg-zinc-600 bg-opacity-30 hover:bg-opacity-50`}
     >
       {copied ? (
         <>
