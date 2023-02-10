@@ -103,8 +103,8 @@ const Page: NextPage<TicketProps> = ({ response }) => {
       });
 
       const deg = {
-        x: 60 * (leftToRight_degrees / 180),
-        y: 60 * ((frontToBack_degrees - 45) / 180),
+        x: 180 * (leftToRight_degrees / 180),
+        y: 180 * ((frontToBack_degrees - 45) / 180),
       };
       // animate(deg);
       frames += 1;
