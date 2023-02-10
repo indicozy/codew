@@ -90,9 +90,9 @@ const Page: NextPage<TicketProps> = ({ response }) => {
     }
 
     function handleMotionEvent(event: any) {
-      const x = event.accelerationIncludingGravity.x;
-      const y = event.accelerationIncludingGravity.y;
-      const z = event.accelerationIncludingGravity.z;
+      const x = event.acceleration.x;
+      const y = event.acceleration.y;
+      const z = event.acceleration.z;
       isMobile = !!x;
       if (!isMobile) return;
 
