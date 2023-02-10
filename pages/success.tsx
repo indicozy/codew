@@ -66,7 +66,6 @@ const Page: NextPage<TicketProps> = ({ response }) => {
   // const bruhRef = useRef<any>(null);
   useEffect(() => {
     let isMobile = false;
-    let isRequestGranted = true;
     let frames = 0;
 
     function animate(deg: { x: number; y: number }) {
@@ -81,19 +80,6 @@ const Page: NextPage<TicketProps> = ({ response }) => {
         }px)  translateY(${-deg.y * 3}px)`;
       }
     }
-    function getAccel() {
-      // @ts-ignore
-      if (DeviceMotionEvent.requestPermission !== undefined) {
-        // @ts-ignore
-        DeviceMotionEvent.requestPermission().then((response: any) => {
-          if (response == "granted") {
-            isRequestGranted = true;
-            window.addEventListener("devicemotion", handleMotionEvent, true);
-            // Do stuff here
-          }
-        });
-      }
-    }
     function animateOnMouseOver(e: any) {
       if (isMobile) return;
       const deg = {
@@ -104,15 +90,15 @@ const Page: NextPage<TicketProps> = ({ response }) => {
     }
 
     function handleMotionEvent(event: any) {
-      const x = event.accelerationIncludingGravity.x;
-      const y = event.accelerationIncludingGravity.y;
-      const z = event.accelerationIncludingGravity.z;
-      isMobile = !!x;
+      // const rotation_degrees = event.alpha;
+      const frontToBack_degrees = event.beta;
+      const leftToRight_degrees = event.gamma;
+      isMobile = !!leftToRight_degrees;
       if (!isMobile) return;
 
       const deg = {
-        x: 30 * ((x / 10) * 2 - 1),
-        y: 30 * (((y - 7) / 10) * 2 - 1),
+        x: 30 * ((leftToRight_degrees / 10) * 2 - 1),
+        y: 30 * (((frontToBack_degrees - 7) / 10) * 2 - 1),
       };
       // animate(deg);
       frames += 1;
@@ -125,13 +111,22 @@ const Page: NextPage<TicketProps> = ({ response }) => {
         frames = 0;
       }
     }
-    getAccel();
     window.addEventListener("mousemove", animateOnMouseOver);
+    window.addEventListener("deviceorientation", handleMotionEvent, true);
+
+    // @ts-ignore
+    if (DeviceMotionEvent.requestPermission !== undefined) {
+      // @ts-ignore
+      DeviceMotionEvent.requestPermission().then((response: any) => {
+        if (response == "granted") {
+          console.log("bruh");
+          // Do stuff here
+        }
+      });
+    }
     return () => {
       window.removeEventListener("mousemove", animateOnMouseOver);
-      if (isRequestGranted) {
-        window.removeEventListener("devicemotion", handleMotionEvent);
-      }
+      window.removeEventListener("deviceorientation", handleMotionEvent);
     };
   }, [ticketRef]);
 
