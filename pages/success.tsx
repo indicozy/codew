@@ -62,7 +62,6 @@ export const getServerSideProps: GetServerSideProps<TicketProps> = async (
 const Page: NextPage<TicketProps> = ({ response }) => {
   const ticketRef = useRef<any>(null);
   const imageRef = useRef<any>(null);
-  const testRef = useRef<any>(null);
   const { t } = useTranslation();
   // const bruhRef = useRef<any>(null);
   useEffect(() => {
@@ -96,11 +95,6 @@ const Page: NextPage<TicketProps> = ({ response }) => {
       const leftToRight_degrees = event.gamma;
       isMobile = !!leftToRight_degrees;
       if (!isMobile) return;
-
-      testRef.current.innerHTML = JSON.stringify({
-        beta: event.beta,
-        gamma: event.gamma,
-      });
 
       const deg = {
         x: 270 * (leftToRight_degrees / 180),
@@ -192,9 +186,6 @@ const Page: NextPage<TicketProps> = ({ response }) => {
               </div>
             </div>
           </div>
-        </div>
-        <div>
-          <div ref={testRef} className="w-60 overflow-hidden"></div>
         </div>
         <div>
           {!isSafari ? (
