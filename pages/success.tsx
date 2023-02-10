@@ -106,11 +106,7 @@ const Page: NextPage<TicketProps> = ({ response }) => {
         x: 270 * (leftToRight_degrees / 180),
         y: 270 * ((frontToBack_degrees - 45) / 180),
       };
-      // animate(deg);
-      // frames += 1;
-      // const shutterSpeed = 18;
       const stiffness = 2;
-      // if (frames >= shutterSpeed) {
       deg.x /= stiffness;
       deg.y /= stiffness;
       animate(deg);
@@ -164,7 +160,7 @@ const Page: NextPage<TicketProps> = ({ response }) => {
         </div>
       </div>
       <div className="absolute w-screen h-[calc(100vh-5rem)] flex flex-col items-center justify-center">
-        <div className="scale-[.6] sm:scale-100">
+        <div className="scale-[.6] md:scale-100">
           <div
             className=" w-[40rem] h-[20rem] border border-zinc-600 rounded-[60px] flex backdrop-blur-lg bg-bg bg-opacity-20 transition-all duration-75"
             ref={ticketRef}
@@ -205,7 +201,7 @@ const Page: NextPage<TicketProps> = ({ response }) => {
             <></>
           ) : (
             <button
-              className="border border-default p-2 roundd-lg"
+              className="border border-default p-2 rounded-lg"
               onClick={() => {
                 try {
                   // @ts-ignore
@@ -223,7 +219,7 @@ const Page: NextPage<TicketProps> = ({ response }) => {
                 // }
               }}
             >
-              Включить Анимацию
+              Animate
             </button>
           )}
         </div>
