@@ -121,7 +121,9 @@ const Page: NextPage<TicketProps> = ({ response }) => {
     window.addEventListener("deviceorientation", handleMotionEvent, true);
 
     // @ts-ignore
-    if (DeviceMotionEvent.requestPermission !== undefined) {
+    // if (DeviceMotionEvent.requestPermission !== undefined) {
+    // @ts-ignore
+    try {
       // @ts-ignore
       DeviceMotionEvent.requestPermission().then((response: any) => {
         if (response == "granted") {
@@ -129,7 +131,10 @@ const Page: NextPage<TicketProps> = ({ response }) => {
           // Do stuff here
         }
       });
+    } catch {
+      //pass
     }
+    // }
     return () => {
       window.removeEventListener("mousemove", animateOnMouseOver);
       window.removeEventListener("deviceorientation", handleMotionEvent);
