@@ -88,6 +88,7 @@ const Page: NextPage<TicketProps> = ({ response }) => {
         DeviceMotionEvent.requestPermission().then((response: any) => {
           if (response == "granted") {
             isRequestGranted = true;
+            window.addEventListener("devicemotion", handleMotionEvent, true);
             // Do stuff here
           }
         });
@@ -125,11 +126,12 @@ const Page: NextPage<TicketProps> = ({ response }) => {
       }
     }
     getAccel();
-    window.addEventListener("devicemotion", handleMotionEvent, true);
     window.addEventListener("mousemove", animateOnMouseOver);
     return () => {
       window.removeEventListener("mousemove", animateOnMouseOver);
-      window.removeEventListener("devicemotion", handleMotionEvent);
+      if (isRequestGranted) {
+        window.removeEventListener("devicemotion", handleMotionEvent);
+      }
     };
   }, [ticketRef]);
 
