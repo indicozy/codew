@@ -66,6 +66,7 @@ const Page: NextPage<TicketProps> = ({ response }) => {
   // const bruhRef = useRef<any>(null);
   useEffect(() => {
     let isMobile = false;
+    let isRequestGranted = true;
     let frames = 0;
 
     function animate(deg: { x: number; y: number }) {
@@ -80,6 +81,18 @@ const Page: NextPage<TicketProps> = ({ response }) => {
         }px)  translateY(${-deg.y * 3}px)`;
       }
     }
+    function getAccel() {
+      // @ts-ignore
+      if (DeviceMotionEvent.requestPermission) {
+        // @ts-ignore
+        DeviceMotionEvent.requestPermission().then((response: any) => {
+          if (response == "granted") {
+            isRequestGranted = true;
+            // Do stuff here
+          }
+        });
+      }
+    }
     function animateOnMouseOver(e: any) {
       if (isMobile) return;
       const deg = {
@@ -90,9 +103,9 @@ const Page: NextPage<TicketProps> = ({ response }) => {
     }
 
     function handleMotionEvent(event: any) {
-      const x = event.acceleration.x;
-      const y = event.acceleration.y;
-      const z = event.acceleration.z;
+      const x = event.accelerationIncludingGravity.x;
+      const y = event.accelerationIncludingGravity.y;
+      const z = event.accelerationIncludingGravity.z;
       isMobile = !!x;
       if (!isMobile) return;
 
@@ -111,6 +124,7 @@ const Page: NextPage<TicketProps> = ({ response }) => {
         frames = 0;
       }
     }
+    getAccel();
     window.addEventListener("devicemotion", handleMotionEvent, true);
     window.addEventListener("mousemove", animateOnMouseOver);
     return () => {
