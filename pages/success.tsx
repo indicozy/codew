@@ -120,20 +120,6 @@ const Page: NextPage<TicketProps> = ({ response }) => {
     window.addEventListener("mousemove", animateOnMouseOver);
     window.addEventListener("deviceorientation", handleMotionEvent, true);
 
-    setTimeout(() => {
-      try {
-        // @ts-ignore
-        DeviceMotionEvent.requestPermission().then((response: any) => {
-          if (response == "granted") {
-            console.log("bruh");
-            // Do stuff here
-          }
-        });
-      } catch {
-        //pass
-      }
-    }, 1000);
-
     // @ts-ignore
     // if (DeviceMotionEvent.requestPermission !== undefined) {
     // @ts-ignore
@@ -143,10 +129,14 @@ const Page: NextPage<TicketProps> = ({ response }) => {
     };
   }, [ticketRef]);
 
-  const [hasNavigator, hasNavigatorSet] = useState(false);
+  const [hasNavigator, hasNavigatorSet] = useState<boolean>(false);
+  const [isSafari, isSafariSet] = useState<boolean>(false);
   useEffect(() => {
     if (!!navigator.share) {
       hasNavigatorSet(true);
+    }
+    if (navigator.userAgent) {
+      isSafariSet(/^((?!chrome|android).)*safari/i.test(navigator.userAgent));
     }
   }, []);
 
@@ -211,25 +201,31 @@ const Page: NextPage<TicketProps> = ({ response }) => {
           <div ref={testRef} className="w-60 overflow-hidden"></div>
         </div>
         <div>
-          <button
-            onClick={() => {
-              try {
-                // @ts-ignore
-                DeviceMotionEvent.requestPermission().then((response: any) => {
-                  if (response == "granted") {
-                    console.log("bruh");
-                    // Do stuff here
-                  }
-                });
-              } catch {
-                //pass
-              }
-              // }
-            }}
-          >
-            {" "}
-            grant
-          </button>
+          {!isSafari ? (
+            <></>
+          ) : (
+            <button
+              className="border border-default p-2 roundd-lg"
+              onClick={() => {
+                try {
+                  // @ts-ignore
+                  DeviceMotionEvent.requestPermission().then(
+                    (response: any) => {
+                      if (response == "granted") {
+                        console.log("bruh");
+                        // Do stuff here
+                      }
+                    }
+                  );
+                } catch {
+                  //pass
+                }
+                // }
+              }}
+            >
+              Включить Анимацию
+            </button>
+          )}
         </div>
         <div className="flex space-x-8 justify-center mt-8">
           {hasNavigator ? (
