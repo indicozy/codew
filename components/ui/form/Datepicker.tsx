@@ -4,8 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-day-picker/dist/style.css";
 import dayjs from "dayjs";
 import { ru, enUS } from "date-fns/locale";
-import { ClassNames, DayPicker } from "react-day-picker";
-import styles from "react-day-picker/dist/style.module.css";
+import { DayPicker } from "react-day-picker";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import { useTranslation } from "next-export-i18n";
 import { Popover, Transition } from "@headlessui/react";
@@ -74,6 +73,7 @@ const DateField: FC<{
               <Popover.Panel className="absolute left-1/2 z-10 mt-3 -translate-x-1/2 transform px-4 sm:px-0 lg:max-w-3xl">
                 <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-[#544761]">
                   <DayPicker
+                    locale={t("locale") === "en" ? enUS : ru}
                     // classNames={classNames}
                     showOutsideDays
                     fromYear={1980}
