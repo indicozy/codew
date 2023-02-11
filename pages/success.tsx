@@ -140,6 +140,10 @@ const Page: NextPage<TicketProps> = ({ response }) => {
           content="Your application was received. We will contact you for the next steps by email. Look out!"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          property="og:image"
+          content="https://codew.kz/preview/success.png"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={`absolute z-[-1]`}>

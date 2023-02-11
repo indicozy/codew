@@ -20,6 +20,10 @@ export default function Home() {
           content="Register for IV annual national competition in competitive programming for the university and high school female students."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          property="og:image"
+          content="https://codew.kz/preview/index.png"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Hero />
