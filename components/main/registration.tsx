@@ -46,7 +46,7 @@ export function Registration() {
     getValues,
   } = useForm();
   const router = useRouter();
-  const { mutate, isLoading } = useMutation(
+  const { mutate, isLoading, isSuccess, isError } = useMutation(
     async (values) => {
       console.warn("MUTATE", values);
       const response = await axios.post("/api/register", values, {
@@ -224,10 +224,20 @@ export function Registration() {
               className={`px-6 py-2 text-2xl sm:text-2xl ${
                 isLoading
                   ? "bg-gray-800"
+                  : isSuccess
+                  ? "bg-green-600 text-white"
+                  : isError
+                  ? "bg-red-600"
                   : "bg-default hover:bg-rose-600 transition-all duration-150"
               } rounded-full`}
             >
-              {isLoading ? t("form.loading") : t("form.submit")}
+              {isLoading
+                ? t("form.loading")
+                : isSuccess
+                ? t("form.success")
+                : isError
+                ? t("form.error")
+                : t("form.submit")}
             </button>
           </div>
         </form>

@@ -22,6 +22,8 @@
   "form": {
     "submit": "Submit",
     "loading": "Loading",
+    "success": "Success!",
+    "error": "Error",
 
     "firstName": "First name",
     "lastName": "Last name",
