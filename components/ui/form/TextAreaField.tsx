@@ -19,7 +19,7 @@ const TextAreaField: FC<{
         *{t("form.textArea.minimum")}*
       </div>
       <textarea
-        className=" bg-[#544761] text-[#DAD9D9] rounded-xl font-mont block max-w-5xl w-full mx-auto p-2"
+        className=" bg-[#544761] text-[#DAD9D9] rounded-xl font-mont block max-w-5xl w-full mx-auto p-2 overflow-x-scroll"
         rows={8}
         {...register(slug, validation)}
       />

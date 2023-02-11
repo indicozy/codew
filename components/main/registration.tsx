@@ -140,6 +140,7 @@ export function Registration() {
               register={register}
               errors={errors}
               name={t("form.pursuingDegree")}
+              warningText={t("form.text.pursuing_degree")}
               slug="pursuingDegree"
               validation={{ required: true }}
             />

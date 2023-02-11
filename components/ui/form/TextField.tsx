@@ -8,7 +8,8 @@ const TextField: FC<{
   slug: string;
   validation: any;
   errorText?: string;
-}> = ({ errors, register, name, slug, validation, errorText }) => {
+  warningText?: string;
+}> = ({ errors, register, name, slug, validation, errorText, warningText }) => {
   const { t } = useTranslation();
   return (
     <div>
@@ -18,6 +19,11 @@ const TextField: FC<{
         type="text"
         {...register(slug, validation)}
       />
+      {warningText ? (
+        <div className="text-xs text-gray-400">{warningText}</div>
+      ) : (
+        <></>
+      )}
       <div className="h-6">
         {errors[slug] && (
           <span className="text-red-400 text-sm">

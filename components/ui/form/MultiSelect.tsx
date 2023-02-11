@@ -39,9 +39,6 @@ const MultiSelect: FC<{
   return (
     <div className="my-2">
       <label className="block">{name}*:</label>
-      <div className="text-xs text-gray-400">
-        {t("form.multiSelect.select")}
-      </div>
       <Listbox
         multiple
         value={selected}
@@ -100,6 +97,9 @@ const MultiSelect: FC<{
           </Transition>
         </div>
       </Listbox>
+      <div className="text-xs text-gray-400">
+        {t("form.multiSelect.select")}
+      </div>
       <div className="h-6">
         {errors[slug] && (
           <span className="text-red-400 text-sm">

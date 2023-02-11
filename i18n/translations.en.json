@@ -44,6 +44,9 @@
     "emailError": "Please verify your email.",
     "errorDefault": "This field is required",
 
+    "text": {
+      "pursuing_degree": "for highschool - write High School"
+    },
     "multiSelect": {
       "select": "Select multiple"
     },
