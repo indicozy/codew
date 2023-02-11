@@ -14,7 +14,7 @@
     "copy": "Copy URL",
     "copied": "Copied!",
     "hosted": "Hosted by ACM-W",
-    "date": "10:30am, October 25, 2002"
+    "date": "10:00 am, March 4, 2023"
   },
   "footer": {
     "love": "Made with ❤️ by"
@@ -70,13 +70,13 @@
       "1": "Welcome to",
       "2": "CodeW 2023"
     },
-    "dates": "Dates"
+    "dates": "March 4, 2023"
   },
   "timeline": {
     "headline": "CodeW 2023 Timeline",
     "items": [
-      { "text1": "February 9 - 23rd", "text2": "Registration", "image": "/" },
-      { "text1": "February 23 - 28th", "text2": "Qualification Round" },
+      { "text1": "February 11 - 25rd", "text2": "Registration", "image": "/" },
+      { "text1": "February 25 - 28th", "text2": "Qualification Round" },
       {
         "text1": "March 2-3rd",
         "text2": "Confirmation emails sent to participants"
@@ -88,26 +88,30 @@
     "items": [
       {
         "time": "10:00-11:00",
-        "name": "Opening"
+        "name": "Opening Ceremony"
       },
       {
-        "time": "10:00-11:00",
+        "time": "11:00-12:00",
         "name": "Workshop"
       },
       {
-        "time": "13:00-14:00",
+        "time": "12:00-13:00",
         "name": "Lunch Break"
       },
       {
-        "time": "14:00-17:00",
+        "time": "13:00-16:00",
         "name": "Main Contest"
       },
       {
-        "time": "17:00-18:00",
+        "time": "16:00-17:00",
         "name": "Networking"
       },
       {
-        "time": "18:00-18:30",
+        "time": "17:00-17:30",
+        "name": "Photo Shoot"
+      },
+      {
+        "time": "17:30-18:00",
         "name": "Closing Ceremony"
       }
     ]
@@ -117,11 +121,11 @@
     "umag": {
       "links": [
         {
-          "href": "#",
+          "href": "https://umag.kz/",
           "text": "Link"
         },
         {
-          "href": "#",
+          "href": "https://www.instagram.com/umag.kz/",
           "text": "Link"
         }
       ]
@@ -129,11 +133,11 @@
     "epam": {
       "links": [
         {
-          "href": "#",
+          "href": "https://www.epam.com/about/who-we-are/diversity-and-inclusion",
           "text": "Link"
         },
         {
-          "href": "#",
+          "href": "https://www.instagram.com/epam_kazakhstan/",
           "text": "Link"
         }
       ]
@@ -141,11 +145,11 @@
     "tassay": {
       "links": [
         {
-          "href": "#",
+          "href": "https://www.tassay.kz/kz/",
           "text": "Link"
         },
         {
-          "href": "#",
+          "href": "https://www.instagram.com/tassay.kz/",
           "text": "Link"
         }
       ]
@@ -153,11 +157,11 @@
     "zapis": {
       "links": [
         {
-          "href": "#",
+          "href": "https://zapis.kz/",
           "text": "Link"
         },
         {
-          "href": "#",
+          "href": "https://www.instagram.com/zapis.kz/",
           "text": "Link"
         }
       ]
@@ -199,7 +203,7 @@
       },
       {
         "q": "What programming languages are accepted in the contest?",
-        "a": "The contest will be held using Hackerrank, and the accepted programming languages include Java, Python, and C++."
+        "a": "The contest will be held on Codeforces, and the accepted programming languages are those accepted by the platform."
       },
       { "q": "Is it free?", "a": "Yes, it is absolutely free." }
     ]
