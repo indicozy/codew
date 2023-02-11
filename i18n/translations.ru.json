@@ -1,20 +1,17 @@
 {
   "locale": "ru",
-  "registration": {
-    "headline": "Registration"
-  },
   "share": {
     "title": "I'm in CodeW!",
     "text": "get there too"
   },
   "success": {
     "headline": "ийгуфвыиши",
-    "description": "Your application was received. We will contact you for the next steps by email. Look out!",
-    "share": "Share URL",
-    "copy": "Copy URL",
-    "copied": "Copied!",
-    "hosted": "Hosted by ACM-W",
-    "date": "10:30am, October 25, 2002"
+    "description": "Ваша заявка была принята. Для дальнейших действий, мы свяжемся с Вами по e-mail. Пожалуйста, ожидайте.",
+    "share": "Поделиться URL",
+    "copy": "Скопировать URL",
+    "copied": "Скопировано!",
+    "hosted": "Организовано ACM-W",
+    "date": "10:00, 4 марта, 2023"
   },
   "footer": {
     "love": "Сделано с ❤️ от"
@@ -30,55 +27,54 @@
     "registration": "Регистрация"
   },
   "form": {
+    "submit": "Отправить заявку",
+    "loading": "Загрузка",
     "submit": "Submit",
     "loading": "Loading",
     "success": "Success!",
     "error": "Error",
 
-    "firstName": "First name",
-    "lastName": "Last name",
-    "dateOfBirth": "Date of Birth",
-    "citizenship": "Citizenship",
-    "cityOfResidence": "City of Residence",
-    "stateId": "State Id",
-    "schoolName": "School name",
-    "pursuingDegree": "Pursuing Degree",
-    "enrollmentVerification": "Enrollment Verification",
-    "graduationYear": "Graduation Year",
-    "email": "Email address",
-    "contestLanguage": "Contest Language",
-    "selectLanguage": "Select Language",
-    "programmingLanguages": "Programming Languages",
-    "selectLanguages": "Select Languages",
+    "firstName": "Имя",
+    "lastName": "Фамилия",
+    "dateOfBirth": "Дата рождения",
+    "citizenship": "Гражданство",
+    "cityOfResidence": "Город проживания",
+    "stateId": "# удостоверения личности",
+    "schoolName": "Место обучения",
+    "pursuingDegree": "Степень образования",
+    "enrollmentVerification": "Справка с места обучения",
+    "graduationYear": "Год выпуска",
+    "email": "Email",
+    "contestLanguage": "Язык соревнования",
+    "selectLanguage": "Выбрать язык",
+    "programmingLanguages": "Язык программирования",
+    "selectLanguages": "Выбрать языки",
     "cv": "CV",
-    "motivationLetter": "What motivates you to participate in codeW?",
+    "motivationLetter": "Почему Вы хотите участвовать в codeW?",
 
-    "emailError": "Please verify your email.",
-    "errorDefault": "This field is required",
+    "emailError": "Пожалуйста, подтвердите Ваш email.",
+    "errorDefault": "Это поле обязательно к заполнению",
 
-    "text": {
-      "pursuing_degree": "for highschool - write High School"
-    },
     "multiSelect": {
-      "select": "Select multiple"
+      "select": "Выбрать несколько"
     },
     "textArea": {
-      "minimum": "minimum 100 words"
+      "minimum": "Минимум 100 слов"
     }
   },
   "hero": {
-    "register": "Register",
+    "register": "Зарегистрироваться",
     "welcome": {
-      "1": "Welcome to",
-      "2": "codeW 2023"
+      "1": "Добро пожаловать",
+      "2": "на codeW 2023"
     },
-    "dates": "Dates"
+    "dates": "4 марта 2023"
   },
   "timeline": {
     "headline": "Таймлайн codeW 2023",
     "items": [
-      { "text1": "9-23 февраля", "text2": "Регистрация" },
-      { "text1": "23-28 февраля", "text2": "Квалификационный тест" },
+      { "text1": "11-25 февраля", "text2": "Регистрация" },
+      { "text1": "25-28 февраля", "text2": "Квалификационный тест" },
       {
         "text1": "2-3 марта",
         "text2": "Отправление письменных подтверждений участницам"
@@ -86,44 +82,48 @@
     ]
   },
   "schedule": {
-    "headline": "Расписснснфивфыв",
+    "headline": "Расписание",
     "items": [
       {
         "time": "10:00-11:00",
-        "name": "Открытие"
+        "name": "Церемония открытия"
       },
       {
-        "time": "10:00-11:00",
+        "time": "11:00-12:00",
         "name": "Мастер-класс"
       },
       {
-        "time": "13:00-14:00",
+        "time": "12:00-12:30",
         "name": "Ланч-брейк"
       },
       {
-        "time": "14:00-17:00",
+        "time": "13:00-16:00",
         "name": "Основное соревнование"
       },
       {
-        "time": "17:00-18:00",
+        "time": "16:00-17:00",
         "name": "Нетворкинг"
       },
+       {
+        "time": "17:00-17:30",
+        "name": "Фотосессия"
+      },
       {
-        "time": "18:00-18:30",
-        "name": "Закрытие"
+        "time": "17:30-18:00",
+        "name": "Церемония закрытия"
       }
     ]
   },
   "sponsors": {
-    "headline": "Our Sponsors",
+    "headline": "Наши спонсоры",
     "umag": {
       "links": [
         {
-          "href": "#",
+          "href": "https://umag.kz/",
           "text": "Link"
         },
         {
-          "href": "#",
+          "href": "https://www.instagram.com/umag.kz/",
           "text": "Link"
         }
       ]
@@ -131,11 +131,11 @@
     "epam": {
       "links": [
         {
-          "href": "#",
+          "href": "https://www.epam.com/about/who-we-are/diversity-and-inclusion",
           "text": "Link"
         },
         {
-          "href": "#",
+          "href": "https://www.instagram.com/epam_kazakhstan/",
           "text": "Link"
         }
       ]
@@ -143,11 +143,11 @@
     "tassay": {
       "links": [
         {
-          "href": "#",
+          "href": "https://www.tassay.kz/kz/",
           "text": "Link"
         },
         {
-          "href": "#",
+          "href": "https://www.instagram.com/tassay.kz/",
           "text": "Link"
         }
       ]
@@ -155,11 +155,11 @@
     "zapis": {
       "links": [
         {
-          "href": "#",
+          "href": "https://zapis.kz/",
           "text": "Link"
         },
         {
-          "href": "#",
+          "href": "https://www.instagram.com/zapis.kz/",
           "text": "Link"
         }
       ]
@@ -181,7 +181,7 @@
       },
       {
         "q": "Можно ли участвовать, если я новичок в программировании?",
-        "a": "Да, мы приглашаем всех, кто интересуется программированием, присоединиться к нам. Все, что вам нужно знать, - это основы, как минимум, одного языка программирования.В соревновании будет три уровня: начинающий, средний и продвинутый. Ваш уровень будет определен посредством теста, который мы вышлем участницам после регистрации."
+        "a": "Да, мы приглашаем всех, кто интересуется программированием, присоединиться к нам. Все, что вам нужно знать - это основы, как минимум, одного языка программирования. В соревновании будет три уровня: начинающий, средний и продвинутый. Ваш уровень будет определен посредством теста, который мы вышлем участницам после регистрации."
       },
       {
         "q": "В каком формате будет проходить codeW?",
@@ -201,7 +201,7 @@
       },
       {
         "q": "Какие языки программирования могут быть использованы/принимаются на соревновании?",
-        "a": "Конкурс будет проводиться с использованием Hackerrank, где можно будет использовать такие языки программирования, как Java, Python и C++."
+        "a": "Конкурс будет проводиться с использованием CodeForces, где можно будет кодить на широкоиспользуемых языках программирования."
       },
       {
         "q": "Участие в соревновании бесплатное?",
