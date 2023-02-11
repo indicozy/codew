@@ -15,6 +15,7 @@ import MultiSelect from "../ui/form/MultiSelect";
 import languages from "../../data/languages";
 import TextAreaField from "../ui/form/TextAreaField";
 import { useTranslation } from "next-export-i18n";
+import { Headline } from "../ui/headline";
 
 // const incomingDataSchema = z.object({
 //   firstName: z.string(),
@@ -70,6 +71,7 @@ export function Registration() {
   return (
     <ComponentAnchor id="registration">
       <Container>
+        <Headline>{t("registration.headline")}</Headline>
         <form
           onSubmit={(e) => handleSubmit(onSubmit)(e)}
           encType="multipart/form-data"

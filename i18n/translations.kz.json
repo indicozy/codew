@@ -1,5 +1,8 @@
 {
   "locale": "kz",
+  "registration": {
+    "headline": "Registration"
+  },
   "share": {
     "title": "I'm in CodeW!",
     "text": "get there too"

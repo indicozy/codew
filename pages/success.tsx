@@ -1,6 +1,7 @@
 import { IconCopy, IconShare } from "@tabler/icons";
 import { GetServerSideProps, NextPage } from "next";
 import { useTranslation } from "next-export-i18n";
+import Head from "next/head";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import CopyBtn from "../components/CopyBtn";
@@ -132,6 +133,15 @@ const Page: NextPage<TicketProps> = ({ response }) => {
 
   return (
     <>
+      <Head>
+        <title>You successfully registered for codeW 2023!</title>
+        <meta
+          name="description"
+          content="Your application was received. We will contact you for the next steps by email. Look out!"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div className={`absolute z-[-1]`}>
         <div className="w-screen overflow-x-hidden h-screen -mt-20">
           <div className="relative transition-all duration-75" ref={imageRef}>
