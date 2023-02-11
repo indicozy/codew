@@ -29,8 +29,8 @@
   "form": {
     "submit": "Отправить заявку",
     "loading": "Загрузка",
-    "success": "Success!",
-    "error": "Error",
+    "success": "Успешно!",
+    "error": "Ошибка",
 
     "firstName": "Имя",
     "lastName": "Фамилия",

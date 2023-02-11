@@ -27,10 +27,10 @@
     "registration": "Тіркелу"
   },
   "form": {
-    "submit": "Submit",
-    "loading": "Loading",
-    "success": "Success!",
-    "error": "Error",
+    "submit": "Жіберу",
+    "loading": "Жүктелуде",
+    "success": "Сәтті өтті!",
+    "error": "Қате",
 
     "firstName": "Аты",
     "lastName": "Тегі",
