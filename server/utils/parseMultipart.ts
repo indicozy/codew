@@ -53,8 +53,9 @@ export const parseMultipart = <Files extends string, TextFields extends ZodSchem
                 reject(err);
                 return null;
             });
-
+ 
         if (!parsedFields || !parsedFields.success) {
+            reject(new Error("Couldn't parse fields"));
             return;
         }
 

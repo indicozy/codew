@@ -50,7 +50,7 @@ const handler: NextApiHandler = async (req, res) => {
 
   const files = await uploadFiles(data.files, email);
 
-  await prisma.response.create({
+  const created = await prisma.response.create({
     data: {
       ...data.fields,
       ...files,
@@ -59,6 +59,7 @@ const handler: NextApiHandler = async (req, res) => {
 
   return res.status(200).json({
     success: true,
+    id: created.id,
   });
 }
 

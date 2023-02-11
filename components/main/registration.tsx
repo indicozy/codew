@@ -54,14 +54,16 @@ export function Registration() {
         },
       });
       console.warn("RESPONSE", response);
+      return response.data;
     },
-    { onSuccess: () => router.push("/success") }
+    { onSuccess: (data) => router.push(`/success?id=${data.id}`) }
   );
 
   const onSubmit = (values: any) => {
     values.cv = values.cv[0];
     values.stateId = values.stateId[0];
     values.enrollmentVerification = values.enrollmentVerification[0];
+    values.programmingLanguages = values.programmingLanguages.join(", ");
     mutate(values);
   };
   const { t } = useTranslation();

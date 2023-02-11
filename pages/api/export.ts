@@ -19,7 +19,6 @@ const generateCsv = (data: Response[]) => new Promise((res, rej) => {
             cityOfResidence: 'City of Residence',
             schoolName: 'School Name',
             pursuingDegree: 'Pursuing Degree',
-            currentYear: 'Current Year',
             programmingLanguages: 'Programming Languages',
             motivationLetter: 'Motivation Letter',
             stateId: 'State ID',
