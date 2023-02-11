@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.react-datepicker__input-container input {
-  @apply bg-[#544761] text-[#DAD9D9] w-96 py-1 rounded-full px-2 font-mont;
-}
-
 .link-underline {
   border-bottom-width: 0;
   background-image: linear-gradient(transparent, transparent),
@@ -33,44 +29,4 @@
 .link-underline-thin:hover {
   background-size: 100% 1px;
   background-position: 0 100%;
-}
-
-.react-datepicker-popper {
-}
-div.react-datepicker,
-div.react-datepicker__month-container,
-div.react-datepicker__header {
-  @apply bg-[#544761] font-mont;
-}
-
-div.react-datepicker-popper[data-placement^="bottom"]
-  .react-datepicker__triangle::after {
-  @apply border-b-[#544761];
-}
-div.react-datepicker-wrapper {
-  @apply w-96;
-}
-div.react-datepicker-popper[data-placement^="bottom"]
-  .react-datepicker__triangle::before {
-  @apply border-b-[#544761];
-}
-button.react-datepicker__navigation {
-  @apply mt-3;
-}
-div.react-datepicker {
-  @apply rounded-xl border-none p-2;
-}
-
-div.react-datepicker__current-month,
-div.react-datepicker__day-names .react-datepicker__day-name,
-div.react-datepicker__day {
-  @apply text-white;
-}
-div.react-datepicker__day-name,
-div.react-datepicker__day {
-  @apply px-4 py-2 text-center w-8 inline-flex justify-center;
-}
-
-div.react-datepicker__day--selected {
-  @apply bg-default;
 }
