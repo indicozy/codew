@@ -13,7 +13,6 @@ module.exports = {
         default: "#FF6F60",
       },
       fontFamily: {
-        neue: ["var(--font-neue)"],
         mont: ["var(--font-mont)"],
       },
     },

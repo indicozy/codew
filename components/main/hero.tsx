@@ -28,7 +28,7 @@ export function Hero() {
           </div>
           <div className="flex flex-col justify-center text-center ">
             <div>
-              <h1 className="text-4xl sm:text-6xl font-neue font-bold">
+              <h1 className="text-4xl sm:text-6xl font-mont font-bold">
                 {t("hero.welcome.1")} <br />
                 {t("hero.welcome.2")}
               </h1>

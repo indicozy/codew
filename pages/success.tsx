@@ -171,12 +171,12 @@ const Page: NextPage<TicketProps> = ({ response }) => {
           >
             <div className="w-[30rem] p-10 flex flex-col justify-between">
               <div>
-                <div className=" text-4xl font-neue">
+                <div className=" text-4xl font-mont">
                   {response.firstName} {response.lastName}
                 </div>
                 <div>{response.programmingLanguages}</div>
               </div>
-              <div className="flex flex-nowrap space-x-4 text-zinc-300 font-neue">
+              <div className="flex flex-nowrap space-x-4 text-zinc-300 font-mont">
                 <Image
                   src="/assets/logo.svg"
                   width={100}
@@ -191,7 +191,7 @@ const Page: NextPage<TicketProps> = ({ response }) => {
               </div>
             </div>
             <div className="w-[10rem] border-l border-zinc-600 flex items-center justify-center">
-              <div className=" rotate-90 text-4xl tracking-wider m-0 p-0 font-neue">
+              <div className=" rotate-90 text-4xl tracking-wider m-0 p-0 font-mont">
                 #{padWithLeadingZeros(response.id, 6)}
               </div>
             </div>
