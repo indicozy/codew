@@ -207,7 +207,9 @@ export function Registration() {
               validation={{
                 required: true,
                 validate: (value: string | undefined) =>
-                  value && value.split(" ").length > 100,
+                  value &&
+                  value.split(" ").filter((text) => text?.length > 0).length >
+                    100,
               }}
             />
           </div>
