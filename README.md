@@ -9,3 +9,5 @@ notes:
     <!-- - spacing FAQ from q to a -->
   <!-- - underline text in form to bottom -->
   <!-- - for high school change "" -->
+
+- font is inconsistently uploading
