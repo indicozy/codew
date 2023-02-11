@@ -12,12 +12,13 @@ const FileField: FC<{
   const { t } = useTranslation();
   return (
     <div className="w-96 my-2">
-      <label className="block">{name}*: </label>
+      <label className="block">{name}(PDF)*: </label>
       <input
         type="file"
         className="w-full block text-sm bg-[#544761] text-[#DAD9D9] rounded-full file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-default file:text-white hover:file:bg-rose-600 pr-4"
         {...register(slug, validation)}
       />
+
       <div className="h-6">
         {errors[slug] && (
           <span className="text-red-400 text-sm">
