@@ -29,6 +29,8 @@
   "form": {
     "submit": "Submit",
     "loading": "Loading",
+    "success": "Success!",
+    "error": "Error",
 
     "firstName": "Аты",
     "lastName": "Тегі",
@@ -51,6 +53,9 @@
     "emailError": "Электрондық поштаңызды растаңыз.",
     "errorDefault": "Бұл жерді міндетті түрде толтыру керек",
 
+    "text": {
+      "pursuing_degree": "for highschool - write High School"
+    },
     "multiSelect": {
       "select": "Бірнеше тілді таңдасаңыз болады"
     },
@@ -78,14 +83,14 @@
     ]
   },
   "schedule": {
-    "headline": "codeW 2023 Schedule",
+    "headline": "codeW 2023 Күнтізбесі",
     "items": [
       {
         "time": "10:00-11:00",
         "name": "Ашылу салтанаты"
       },
       {
-        "time": "10:00-11:00",
+        "time": "11:00-12:00",
         "name": "Мастер-класс"
       },
       {
@@ -105,13 +110,14 @@
         "name": "Суретке түсу"
       },
       {
-        "time": "18:00-18:30",
+        "time": "17:30-18:00",
         "name": "Жабылу салтанаты"
       }
     ]
   },
   "sponsors": {
     "headline": "Біз",
+    "headline": "Біздің демеушілеріміз",
     "umag": {
       "links": [
         {

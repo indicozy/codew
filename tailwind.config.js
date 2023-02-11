@@ -10,7 +10,7 @@ module.exports = {
     extend: {
       colors: {
         bg: "#050506",
-        default: "#FF6F60",
+        default: "#ff6f60",
       },
       fontFamily: {
         mont: ["var(--font-mont)"],
