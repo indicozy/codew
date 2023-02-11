@@ -1,5 +1,7 @@
+import { Disclosure, Transition } from "@headlessui/react";
+import { IconChevronUp } from "@tabler/icons";
 import { useTranslation } from "next-export-i18n";
-import { FC } from "react";
+import { FC, Fragment } from "react";
 import { ComponentAnchor } from "../componentAnchor";
 import BackgroundImage from "../ui/backgroundImage";
 import Container from "../ui/container";
@@ -12,8 +14,33 @@ export function Faq() {
   const questions = t("faq.questions");
   const Question: FC<{ question: TypeQuestion }> = ({ question: { q, a } }) => (
     <div>
-      <div className="text-2xl font-semibold font-mont">{q}</div>
-      <div className="text-base">{a}</div>
+      <Disclosure>
+        {({ open }) => (
+          <>
+            <Disclosure.Button className="flex items-center w-full justify-between rounded-xl bg-zinc-800 px-4 py-2 text-left text-xl font-medium text-zinc-100 hover:bg-default hover:bg-opacity-60 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 duration-150">
+              <span>{q}</span>
+              <IconChevronUp
+                className={`${
+                  open ? "rotate-180 transform" : ""
+                } h-5 w-5 text-zinc-200`}
+              />
+            </Disclosure.Button>
+            <Transition
+              as={Fragment}
+              enter="transition ease-out duration-200"
+              enterFrom="opacity-0 translate-y-1"
+              enterTo="opacity-100 translate-y-0"
+              leave="transition ease-in duration-150"
+              leaveFrom="opacity-100 translate-y-0"
+              leaveTo="opacity-0 translate-y-1"
+            >
+              <Disclosure.Panel className="px-4 pt-4 pb-2 text-lg text-zinc-300 bg-zinc-900 rounded-lg mt-4">
+                {a}
+              </Disclosure.Panel>
+            </Transition>
+          </>
+        )}
+      </Disclosure>
     </div>
   );
   return (
