@@ -70,7 +70,6 @@ export function Registration() {
   return (
     <ComponentAnchor id="registration">
       <Container>
-        {JSON.stringify(getValues())}
         <form
           onSubmit={(e) => handleSubmit(onSubmit)(e)}
           encType="multipart/form-data"
