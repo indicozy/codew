@@ -1,8 +1,5 @@
 {
   "locale": "kz",
-  "registration": {
-    "headline": "Registration"
-  },
   "share": {
     "title": "I'm in CodeW!",
     "text": "get there too"
@@ -35,39 +32,39 @@
     "success": "Success!",
     "error": "Error",
 
-    "firstName": "First name",
-    "lastName": "Last name",
-    "dateOfBirth": "Date of Birth",
-    "citizenship": "Citizenship",
-    "cityOfResidence": "City of Residence",
-    "stateId": "State Id",
-    "schoolName": "School name",
-    "pursuingDegree": "Pursuing Degree",
-    "enrollmentVerification": "Enrollment Verification",
-    "graduationYear": "Graduation Year",
-    "email": "Email address",
-    "contestLanguage": "Contest Language",
-    "selectLanguage": "Select Language",
-    "programmingLanguages": "Programming Languages",
-    "selectLanguages": "Select Languages",
+    "firstName": "Аты",
+    "lastName": "Тегі",
+    "dateOfBirth": "Туған күні",
+    "citizenship": "Азаматтық",
+    "cityOfResidence": "Тұратын қала",
+    "stateId": "Жеке куәлік",
+    "schoolName": "Оқу орны",
+    "pursuingDegree": "Оқу дәрежесі",
+    "enrollmentVerification": "Оқу орнын растайтын құжат (справка)",
+    "graduationYear": "Бітіру жылы",
+    "email": "Email",
+    "contestLanguage": "Негізгі тіл",
+    "selectLanguage": "Тілді таңдаңыз",
+    "programmingLanguages": "Бағдарламалау тілі",
+    "selectLanguages": "Бағдарламалау тілін таңдаңыз",
     "cv": "CV",
-    "motivationLetter": "What motivates you to participate in codeW?",
+    "motivationLetter": "Неге codeW-ға қатысқыңыз келеді?",
 
-    "emailError": "Please verify your email.",
-    "errorDefault": "This field is required",
+    "emailError": "Электрондық поштаңызды растаңыз.",
+    "errorDefault": "Бұл жерді міндетті түрде толтыру керек",
 
     "text": {
       "pursuing_degree": "for highschool - write High School"
     },
     "multiSelect": {
-      "select": "Select multiple"
+      "select": "Бірнеше тілді таңдасаңыз болады"
     },
     "textArea": {
-      "minimum": "minimum 100 words"
+      "minimum": "кемінде 100 сөз"
     }
   },
   "hero": {
-    "register": "Register",
+    "register": "Тіркелу",
     "welcome": {
       "1": "Welcome to",
       "2": "CodeW 2023"
@@ -119,6 +116,7 @@
     ]
   },
   "sponsors": {
+    "headline": "Біз",
     "headline": "Біздің демеушілеріміз",
     "umag": {
       "links": [
