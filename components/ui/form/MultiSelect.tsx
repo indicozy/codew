@@ -37,14 +37,14 @@ const MultiSelect: FC<{
   register(slug, validation);
   const { t } = useTranslation();
   return (
-    <div className="my-2">
+    <div className="my-2 w-full max-w-[24rem]">
       <label className="block">{name}*:</label>
       <Listbox
         multiple
         value={selected}
         onChange={(value) => setSelected(value)}
       >
-        <div className="relative mt-1 w-96">
+        <div className="relative mt-1 w-full">
           <Listbox.Button className="relative w-full cursor-default rounded-lg bg-[#544761] py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
             <span className="block truncate">
               {selected && selected.length !== 0

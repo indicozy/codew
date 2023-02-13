@@ -12,10 +12,10 @@ const TextField: FC<{
 }> = ({ errors, register, name, slug, validation, errorText, warningText }) => {
   const { t } = useTranslation();
   return (
-    <div>
+    <div className="w-full max-w-[24rem]">
       <label className="block">{name}*: </label>
       <input
-        className="bg-[#544761] text-[#DAD9D9] rounded-full px-2 py-1 font-mont block w-96"
+        className="bg-[#544761] text-[#DAD9D9] rounded-full px-2 py-1 font-mont block w-full"
         type="text"
         {...register(slug, validation)}
       />

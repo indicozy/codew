@@ -48,14 +48,14 @@ const DateField: FC<{
   //   day_selected: "bg-red-300",
   // };
   return (
-    <div>
+    <div className="w-full max-w-[24rem]">
       {/* <div>{JSON.stringify(value)}</div> */}
       <label className="block">{name}*:</label>
       <Popover className="relative">
         {({ open }) => (
           <>
             <Popover.Button
-              className={`px-2 py-1 bg-[#544761] rounded-full w-96 text-left ${
+              className={`px-2 py-1 bg-[#544761] rounded-full w-full text-left ${
                 !value ? "text-zinc-400" : "text-white"
               }`}
             >

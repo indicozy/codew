@@ -11,7 +11,7 @@ const FileField: FC<{
 }> = ({ errors, register, name, slug, validation, errorText }) => {
   const { t } = useTranslation();
   return (
-    <div className="w-96 my-2">
+    <div className="w-full max-w-[24rem] my-2">
       <label className="block">{name}(PDF)*: </label>
       <input
         type="file"

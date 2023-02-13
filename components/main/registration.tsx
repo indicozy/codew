@@ -125,9 +125,14 @@ export function Registration() {
             <FileField
               register={register}
               errors={errors}
+              errorText="PDF"
               name={t("form.stateId")}
               slug="stateId"
-              validation={{ required: true }}
+              validation={{
+                required: true,
+                validate: (files: FileList) =>
+                  files[0]?.type === "application/pdf",
+              }}
             />
             <TextField
               register={register}
@@ -146,10 +151,15 @@ export function Registration() {
             />
             <FileField
               register={register}
+              errorText="PDF"
               errors={errors}
               name={t("form.enrollmentVerification")}
               slug="enrollmentVerification"
-              validation={{ required: true }}
+              validation={{
+                required: true,
+                validate: (files: FileList) =>
+                  files[0]?.type === "application/pdf",
+              }}
             />
             <TextField
               errorText="format must be like 2018"
@@ -195,9 +205,14 @@ export function Registration() {
             <FileField
               register={register}
               errors={errors}
+              errorText="PDF"
               name={t("form.cv")}
               slug="cv"
-              validation={{ required: true }}
+              validation={{
+                required: true,
+                validate: (files: FileList) =>
+                  files[0]?.type === "application/pdf",
+              }}
             />
           </div>
           <div className="mt-12">

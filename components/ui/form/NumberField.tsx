@@ -11,11 +11,11 @@ const NumberField: FC<{
 }> = ({ errors, register, name, slug, validation, errorText }) => {
   const { t } = useTranslation();
   return (
-    <div>
+    <div className="w-full max-w-[24rem]">
       <label className="block">{name}*: </label>
       <input
         type="number"
-        className="bg-[#544761] text-[#DAD9D9] rounded-full px-2 py-1 font-mont block"
+        className="bg-[#544761] text-[#DAD9D9] rounded-full px-2 py-1 font-mont block w-full"
         {...register(slug, validation)}
       />
       <div className="h-6">
