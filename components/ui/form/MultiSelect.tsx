@@ -64,7 +64,7 @@ const MultiSelect: FC<{
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-[#544761] text-[#DAD9D9] py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+            <Listbox.Options className="absolute mt-1 max-h-60 z-10 w-full overflow-auto rounded-md bg-[#544761] text-[#DAD9D9] py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
               {variants.map((variant, variantIdx) => (
                 <Listbox.Option
                   key={variantIdx}
