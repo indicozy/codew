@@ -46,7 +46,7 @@ export function Registration() {
     getValues,
   } = useForm();
   const router = useRouter();
-  const { mutate, isLoading, isSuccess, isError } = useMutation(
+  const { mutate, isLoading, isSuccess, isError, data } = useMutation(
     async (values) => {
       console.warn("MUTATE", values);
       const response = await axios.post("/api/register", values, {
@@ -255,6 +255,20 @@ export function Registration() {
                 : t("form.submit")}
             </button>
           </div>
+          {isError ? (
+            <div className="text-center text-red-500 mt-2">
+              Error, please contact us in{" "}
+              <a
+                className="text-blue-400 underline"
+                href="https://t.me/codew2023"
+              >
+                Telegram Chat
+              </a>
+              .
+            </div>
+          ) : (
+            <></>
+          )}
         </form>
       </Container>
     </ComponentAnchor>
