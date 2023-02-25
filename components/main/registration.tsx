@@ -260,9 +260,9 @@ export function Registration() {
               Error, please contact us in{" "}
               <a
                 className="text-blue-400 underline"
-                href="https://t.me/codew2023"
+                href="https://docs.google.com/forms/d/e/1FAIpQLScXl0Qiv1xucGSxC1BNNOG5hlpPJtt4XkCFFtgDbGR_NXlVXQ/viewform?usp=sf_link"
               >
-                Telegram Chat
+                Google Form
               </a>
               .
             </div>
