@@ -40,6 +40,7 @@ const generateCsv = (data: Response[]) =>
   });
 
 const handler: NextApiHandler = async (req, res) => {
+  return res.status(403).end();
   if (req.method !== "POST") {
     return res.status(403).end();
   }
