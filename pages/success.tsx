@@ -22,9 +22,10 @@ function padWithLeadingZeros(num: number | string, totalLength: number) {
   return String(num).padStart(totalLength, "0");
 }
 
-export const getServerSideProps: GetServerSideProps<TicketProps> = async (
-  context
-) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  return {
+    notFound: true,
+  };
   const id = context.query.id as string | undefined;
 
   if (!id) {
