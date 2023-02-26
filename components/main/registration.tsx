@@ -59,6 +59,14 @@ export function Registration() {
     },
     { onSuccess: (data) => router.push(`/success?id=${data.id}`) }
   );
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <Headline>{t("registration.headline")}</Headline>
+      <p className="font-xl text-center mt-8 mb-40">Registration has closed.</p>
+    </>
+  );
 
   const onSubmit = (values: any) => {
     values.cv = values.cv[0];
@@ -67,7 +75,6 @@ export function Registration() {
     values.programmingLanguages = values.programmingLanguages.join(", ");
     mutate(values);
   };
-  const { t } = useTranslation();
   return (
     <ComponentAnchor id="registration">
       <Container>
