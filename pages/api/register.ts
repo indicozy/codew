@@ -1,10 +1,10 @@
-import type { NextApiHandler } from 'next'
-import { z } from 'zod'
-import { prisma } from '../../server/db/client';
-import { Errors } from '../../server/errors';
-import { sendError } from '../../server/utils/sendError';
-import { parseMultipart } from '../../server/utils/parseMultipart';
-import { uploadFiles } from '../../server/utils/uploadFiles';
+import type { NextApiHandler } from "next";
+import { z } from "zod";
+import { prisma } from "../../server/db/client";
+import { Errors } from "../../server/errors";
+import { sendError } from "../../server/utils/sendError";
+import { parseMultipart } from "../../server/utils/parseMultipart";
+import { uploadFiles } from "../../server/utils/uploadFiles";
 
 const incomingDataSchema = z.object({
   firstName: z.string(),
@@ -20,53 +20,58 @@ const incomingDataSchema = z.object({
 });
 
 const fileFields = {
-  stateId: 'application/pdf',
-  enrollmentVerification: 'application/pdf',
-  cv: 'application/pdf',
-}
+  stateId: "application/pdf",
+  enrollmentVerification: "application/pdf",
+  cv: "application/pdf",
+};
 
-export type Response = {
-  success: false;
-  error: string;
-  code: Errors;
-} | {
-  success: true;
-}
+export type Response =
+  | {
+      success: false;
+      error: string;
+      code: Errors;
+    }
+  | {
+      success: true;
+    };
 
 const handler: NextApiHandler = async (req, res) => {
-  const data = await parseMultipart(req, fileFields, incomingDataSchema).catch(() => null);
+  return sendError(res, Errors.INTERNAL_SERVER_ERROR);
+  // const data = await parseMultipart(req, fileFields, incomingDataSchema).catch(
+  //   () => null
+  // );
 
-  if (!data) {
-    return sendError(res, Errors.FORM_ERROR);
-  }
+  // if (!data) {
+  //   return sendError(res, Errors.FORM_ERROR);
+  // }
 
-  const { email } = data.fields;
+  // const { email } = data.fields;
 
-  const exists = (await prisma.response.count({ where: { email } })) > 0;
+  // const exists = (await prisma.response.count({ where: { email } })) > 0;
 
-  if (exists) {
-    return sendError(res, Errors.EMAIL_ALREADY_EXISTS);
-  }
+  // if (exists) {
+  //   return sendError(res, Errors.EMAIL_ALREADY_EXISTS);
+  // }
 
-  const files = await uploadFiles(data.files, email);
+  // const files = await uploadFiles(data.files, email);
 
-  const created = await prisma.response.create({
-    data: {
-      ...data.fields,
-      ...files,
-    }
-  });
+  // const created = await prisma.response.create({
+  //   data: {
+  //     ...data.fields,
+  //     ...files,
+  //   },
+  // });
 
-  return res.status(200).json({
-    success: true,
-    id: created.id,
-  });
-}
+  // return res.status(200).json({
+  //   success: true,
+  //   id: created.id,
+  // });
+};
 
 export const config = {
   api: {
     bodyParser: false,
   },
-}
+};
 
 export default handler;
